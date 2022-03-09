@@ -25,7 +25,7 @@ int changeBox(int x, int y){
         }
     }
 
-    int t = totalB - correctB + 32 - correctB; // (흰색 자리에 검정을 놓았을 때 + 검정 자리에 흰색을 놓았을 때)
+    int t = totalB - correctB + 32 - correctB; // (흰색 자리에 검정을 놓았을 때 + 검정 자리에 흰색을 놓았을 때) << 0,0 W 바꿀 돌갯수
 
     return min(t, 64-t);
 }
