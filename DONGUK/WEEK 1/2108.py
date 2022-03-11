@@ -27,15 +27,14 @@ for _ in range(N):
 
 # 가장 빈도가 높은 수 체크
 key_list = []
-high = 0
-often = 0
+val_list = d.values()
+often = max(val_list)
+
 for key, value in d.items():
-    if value >= high:
+    if value == often:
         key_list.append(key)
-        high = value
 
-key_list = sorted(key_list)
-
+key_list.sort()
 # 빈도가 2개 이상인 것 체크
 if len(key_list) > 1:
     often = key_list[1]
@@ -46,7 +45,6 @@ else:
 mean = round(sum_a / N)
 mid = sorted(nums)[N//2]
 range = max_a - min_a
-print(d)
 
 print(mean)
 print(mid)
