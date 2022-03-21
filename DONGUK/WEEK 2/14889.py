@@ -13,7 +13,11 @@ for _ in range(N):
 
 def match():
     if len(teamA) == N // 2:
-        teamB = list(set(entire_team) - set(teamA))
+        teamB = []
+
+        for i in range(N):
+            if i not in teamA:
+                teamB.append(i)
 
         sum_a, sum_b = 0, 0
         a_len = len(teamA)
@@ -30,7 +34,7 @@ def match():
             answer.append(diff)
         return
 
-    for i in range(N):
+    for i in range(N-1): # 0, 1, 2, 3
         if i not in teamA:
             teamA.append(i)
             match()
