@@ -8,7 +8,7 @@ dp[2] = 1
 dp[3] = 1
 
 
-for i in range(4, 1000000):
+for i in range(4, 1000001):
     nums = []
     nums.append(i-1)
     if i % 3 == 0:
