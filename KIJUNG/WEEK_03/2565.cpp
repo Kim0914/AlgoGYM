@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int N, tmp, tmp2;
+int N;
 vector<pair<int, int> > line;
 pair<int, int> tmp3;
 int cnt[100];
@@ -34,14 +34,14 @@ int main(void){
     }
     // cout << "ok\n";
 
-    // FOR(i,0,N){
-    //     cout << cnt[i] <<"\n";
-    // }
+    FOR(i,0,N){
+        cout << cnt[i] <<"\n";
+    }
 
     while(1){
         int idx = max_element(cnt, cnt+N) - cnt;
 
-        // cout << "idx: "<<idx << "\n";
+        cout << "idx: "<<idx << "\n";
 
         if( cnt[idx] == 0) break;
 
@@ -63,3 +63,18 @@ int main(void){
 
     return 0;
 }
+
+//그리디 알고리즘으로는 못 푸는 문제. LIS로 풀자!
+// 반례
+// 10                                      
+// 1 6
+// 2 8
+// 3 2
+// 4 9
+// 5 5
+// 6 10
+// 7 4
+// 8 1
+// 9 7
+// 10 3
+// 답: 6인데, 7나옴
