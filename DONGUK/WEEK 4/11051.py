@@ -29,3 +29,7 @@ for i in range(1, n+1):
             dp[i][j] = calc(i, j) % 10007
         
 print(dp[n][k])
+
+'''
+날짜 수정..
+'''
