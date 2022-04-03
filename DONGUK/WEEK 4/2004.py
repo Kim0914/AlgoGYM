@@ -23,3 +23,11 @@ n, m = map(int, input().split())
 two_count = calc_two(n) - calc_two(n - m) - calc_two(m)
 five_count = calc_five(n) - calc_five(n - m) - calc_five(m)
 print(min(two_count, five_count))
+
+
+'''
+            n!
+ nCr =  -----------
+        (n-r)! * r!
+
+'''
