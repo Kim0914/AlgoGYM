@@ -14,15 +14,16 @@ int main(void){
         getline(cin, str);
 
         if(str == ".")  break;
-        FOR(i,0,str.size()){
-            if(str.at(i) == '(') s.push_back('(');
-            if(str.at(i) == ')') {
+
+        for(char c: str){
+            if(c == '(') s.push_back(c);
+            else if(c == ')') {
                 if(s.empty()) s.push_back('[');
                 if(s.back()!='(') break;
                 else s.pop_back();    
             }
-            if(str.at(i) == '[') s.push_back('[');
-            if(str.at(i) == ']') {
+            else if(c == '[') s.push_back(c);
+            else if(c == ']') {
                 if(s.empty()) s.push_back('(');
                 if(s.back()!='[') break;
                 else s.pop_back();    
