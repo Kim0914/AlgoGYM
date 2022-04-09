@@ -18,12 +18,12 @@ int main(void){
 
         if(str == "push_front") cin >> nums[--b];
         else if(str == "push_back") cin >> nums[e++];
-        else if(str == "pop_front") cout << ((e-b)? nums[b++]:-1) <<"aa\n";
-        else if(str == "pop_back") cout << ((e-b)? nums[--e]:-1) <<"aa\n";
-        else if(str == "size") cout << e-b << "aa\n";
-        else if(str == "empty") cout << ((e-b)? 0:1) << "aa\n";
-        else if(str == "front") cout << ((e-b)? nums[b]:-1) << "aa\n";
-        else if(str == "back") cout << ((e-b)? nums[e-1]:-1) << "aa\n";
+        else if(str == "pop_front") cout << ((e-b)? nums[b++]:-1) <<"\n";
+        else if(str == "pop_back") cout << ((e-b)? nums[--e]:-1) <<"\n";
+        else if(str == "size") cout << e-b << "\n";
+        else if(str == "empty") cout << ((e-b)? 0:1) << "\n";
+        else if(str == "front") cout << ((e-b)? nums[b]:-1) << "\n";
+        else if(str == "back") cout << ((e-b)? nums[e-1]:-1) << "\n";
     }
 
     return 0;
