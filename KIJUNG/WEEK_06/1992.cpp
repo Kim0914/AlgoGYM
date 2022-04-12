@@ -29,11 +29,8 @@ void dc(int size, int x, int y){
         cout << "(";
         dc(size/2, x, y);
         dc(size/2, x+size/2, y);
-
         dc(size/2, x, y + size/2);
-
         dc(size/2, x + size/2, y + size/2);
-
         cout << ")";
     }
 
