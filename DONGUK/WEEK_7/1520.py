@@ -1,36 +1,35 @@
-n, m = map(int, input().split())
+import sys
+input = sys.stdin.readline
 
-board = []
-cnt = 0
+dx = [1, -1, 0, 0]
+dy = [0, 0, 1, -1]
 
 def search(x, y):
-    global cnt
+    if dp[x][y] != -1:
+        return dp[x][y]
+    
+    if x == m-1 and y == n-1:
+        return 1
 
-    dx = [-1, 0, 1, 0]
-    dy = [0, 1, 0, -1]
+    dp[x][y] = 0
 
-    queue = []
-    queue.append([x,y])
-    while queue:
-        top = queue.pop()
-        x, y = top[0], top[1]
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
 
-        if x == n-1 and y == m-1:
-            cnt += 1
-            continue
+        if 0 <= nx < m and 0 <= ny < n:
+            if board[x][y] > board[nx][ny]:
+                dp[x][y] += search(nx, ny)
 
-        for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-
-            if 0 <= nx < n and 0 <= ny < m:
-                if board[x][y] > board[nx][ny]:
-                    queue.append([nx, ny])
-                
-
-for _ in range(n):
-    board.append(list(map(int, input().split())))
+    return dp[x][y]
 
 
-search(0,0)
-print(cnt)
+m, n = map(int ,input().split())
+board = [list(map(int, input().split())) for _ in range(m)]
+
+dp = [[-1] * n for _ in range(m)]
+
+print(search(0,0))
+
+for d in dp:
+    print(d)
