@@ -33,11 +33,8 @@ int main(void){
     }
 
     v.push_back(1);
-
     dfs();
 
     cout << cnt-1;
-    
-
     return 0;
 }
