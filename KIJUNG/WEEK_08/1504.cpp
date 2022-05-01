@@ -4,15 +4,13 @@
 #include <algorithm>
 
 #define FOR(i,a,b) for(int i=a;i<b;i++)
-#define INF 2000000000
+#define INF 100000000
 
 using namespace std;
 
-int N, E, a, b, c, v1, v2, ans, d[801], v[4];
+int N, E, a, b, c, v1, v2, ans, d[801], v[2];
 vector<pair<int,int> > edge[801];
 priority_queue<pair<int,int>,vector<pair<int,int> >,greater<pair<int,int> > >pq;
-
-
 
 int ds(int start, int end){
 
@@ -48,25 +46,10 @@ int main(void){
         edge[a].push_back(make_pair(b,c));
         edge[b].push_back(make_pair(a,c));
     }
-    cin >> v[1] >> v[2];
-    v[0] = 1;
-    v[3] = N;
-
-    FOR(i,0,3){
-        int tmp = ds(v[i],v[i+1]);
-        if(tmp == INF) {
-            ans = -1;
-            break;
-        }
-        ans += tmp;
-    }
+    cin >> v[0] >> v[1];
+    
+    ans = min(ds(1,v[0]) + ds(v[0],v[1]) + ds(v[1],N), ds(1,v[1]) + ds(v[1],v[0]) + ds(v[0],N));
+    if(ans >= INF) ans = -1;
     cout << ans;
 
-    
-
-
-
 }
-
-
-
