@@ -32,8 +32,8 @@ int main(void){
             m = abs(cur);
         }
         if(cur > 0) right--;
-            else if(cur < 0) left++;
-            else break;
+        else if(cur < 0) left++;
+        else break;
     }
     cout << sol[ansL] << " " << sol[ansR];
 
