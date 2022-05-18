@@ -27,7 +27,7 @@ int main(void){
 
     FOR(i,0,E){
         array<int,3> tmp;
-        cin >> tmp[0] >> tmp[1] >> tmp[2];
+        cin >> tmp[1] >> tmp[2] >> tmp[0];
         edge.push_back(tmp);
     }
 
@@ -47,7 +47,6 @@ int main(void){
     }
 
     cout << weight;
-
 
     return 0;
 }
