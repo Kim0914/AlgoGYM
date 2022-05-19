@@ -52,6 +52,7 @@ def calcDistance():
                 dis = getDistance(x1, y1, x2, y2)
                 distance[i+1].append((j+1, dis))
 
+
 def init():
     for _ in range(n):
         a, b = map(int, input().split())
