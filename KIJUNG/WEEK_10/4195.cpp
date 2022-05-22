@@ -7,20 +7,23 @@
 
 using namespace std;
 
-int T, F, parent[100002];
-map<string, int> M;
+int T, F, parent[200002], counter[200002];
 
 int set_find(int x){
     if(parent[x] == x) return x;
     else return parent[x] = set_find(parent[x]);
 }
 
-void set_union(int x, int y){
+int set_union(int x, int y){
     int px = set_find(x);
     int py = set_find(y);
 
-    if(px<py) parent[py] = px;
-    else parent[px] = py;
+    if(set_find(px) != set_find(py)){
+        parent[py] = px;
+        counter[px] += counter[py];
+        counter[py] = 1;
+    }
+    return counter[px];
 }
 
 int main(void){
@@ -30,42 +33,25 @@ int main(void){
     
     cin >> T;
 
-    FOR(i,0,T){
-        int idx = 1;
-        cin >> F;
-        FOR(i,0,F){
-            int cnt = 0;
-            string str1, str2;
-            cin >> str1 >> str2;
-            if(M.lower_bound(str1) == M.end()) {
-                M[str1]=idx;
-                parent[idx] = idx;
-                idx++;
-            }
-            if(M.lower_bound(str2) == M.end()) {
-                M[str2]=idx;
-                parent[idx] = idx;
-                idx++;
-            }
-            
-            // cout << M[str1] << " " << M[str2] << "\n";
+    while(T--){
+        map<string, int> M;
+        int cnt = 1;
+        int idx1, idx2;
+        string str1, str2;
 
-            set_union(M[str1], M[str2]);
-            // FOR(j,1,idx){
-            //     cout << parent[j] << " ";
-            // }
-            // cout << "\n";
+        FOR(i,0,200002) parent[i] = i;
+        fill(counter, counter+200002, 1);
+        cin >> F;
+        while(F--){
+            cin >> str1 >> str2;
+            if(M[str1] == 0) M[str1]=cnt++;
+            idx1 = M[str1];
+            if(M[str2] == 0) M[str2]=cnt++;
+            idx2 = M[str2];
             
-            int tp = set_find(M[str1]);
-            FOR(j,1,idx){
-                if(set_find(j) == tp) cnt++;
-            }
-            cout << cnt << "\n";
+            cout << set_union(idx1, idx2) << "\n";
         }
-        M.clear();
-        fill(parent, parent+100002, 0);
     }
     
-
     return 0;
 }
