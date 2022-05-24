@@ -1,6 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <algorithm>
+#include <stack>
 
 #define FOR(i,a,b) for(int i=a;i<b;i++)
 #define INF 2000000000
@@ -8,6 +9,7 @@
 using namespace std;
 
 int N, K, m[100002], before[100002];
+stack<int> s;
 priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > pq;
 
 void valid(int cur, int cost, int next, int plus){
@@ -34,18 +36,21 @@ int main(void){
             m[K] = cost;
             break;
         }
-        valid(cur,cost,cur*2,0);
+        valid(cur,cost,cur*2,1);
         valid(cur,cost,cur+1,1);
         valid(cur,cost,cur-1,1);
     }
-    cout << m[K];
+    cout << m[K] << "\n";
 
-    int trackCur = K;
-    while(before[trackCur]){
-        cout << trackCur << " ";
-        trackCur = before[trackCur];
+    s.push(K);
+    while(s.top() != N){
+        s.push(before[s.top()]);
     }
 
+    while(!s.empty()){
+        cout << s.top() << " ";
+        s.pop();
+    }
 
     return 0;
 }
