@@ -38,7 +38,7 @@ int main(void){
             result[0] = (2*cur)%10000;
             result[1] = (10000+cur-1)%10000;
             result[2] = ((cur*10)+(cur/1000))%10000;
-            result[3] = ((cur%10)*1000+(cur/10)*10)%10000;
+            result[3] = ((cur%10)*1000+(cur/10))%10000;
             
             FOR(i,0,4){
                 if(!visited[result[i]]){
