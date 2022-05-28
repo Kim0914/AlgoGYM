@@ -15,8 +15,8 @@ priority_queue<pair<int,int>,vector<pair<int,int> >,greater<pair<int,int> > >pq;
 int ds(int start, int end){
 
     fill_n(dis+1,n,INF);
-    dis[s] = 0;
-    pq.push(make_pair(0,s));
+    dis[start] = 0;
+    pq.push(make_pair(0,start));
 
     while(!pq.empty()){
         int cost = pq.top().first;
@@ -41,12 +41,14 @@ int main(void){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    FOR(i,1,2000){
-        edge[i].clear();
-    }
+    
 
     cin >> T;
     FOR(l,0,T){
+        vector<int> arrive;
+
+        FOR(i,1,2000) edge[i].clear();        
+
         cin >> n >> m >> t >> s >> g >> h;
         FOR(i,0,m){
             cin >> a >> b >> d;
@@ -56,12 +58,16 @@ int main(void){
         }
         //logic
 
-
-        
         FOR(i,0,t){
             cin >> x;
-            ans = min(ds(s,g) + ds(h,x) + ness, ds(s,h) + ds(g,x) + ness);
-            if(ans < INF) cout << ans << " ";
+            if(ds(s,x) == ds(s,g) + ds(h,x) + ness || ds(s,x) == ds(s,h) + ds(g,x) + ness)
+                arrive.push_back(x);
+        }
+
+        sort(arrive.begin(), arrive.end());
+
+        FOR(i,0,arrive.size()){
+            cout << arrive[i] << " ";
         }
         cout << "\n";
     }
