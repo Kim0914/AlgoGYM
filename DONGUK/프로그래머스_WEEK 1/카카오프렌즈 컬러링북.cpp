@@ -9,9 +9,9 @@ int dx[4] = {1, -1, 0, 0};
 int dy[4] = {0, 0, 1, -1};
 
 
-int bfs(int i, int j, int m, int n, vector<vector<int>> picture){
+int bfs(int i, int j, int m, int n, vector<vector<int> > &picture){
     int cnt = 1;
-    queue<pair<int, int>> q;
+    queue<pair<int, int> > q;
     q.push(make_pair(i, j));
     visited[i][j] = 1;
     
@@ -39,7 +39,7 @@ int bfs(int i, int j, int m, int n, vector<vector<int>> picture){
 }
 
 
-vector<int> solution(int m, int n, vector<vector<int>> picture) {
+vector<int> solution(int m, int n, vector<vector<int> > picture) {
     int number_of_area = 0;
     int max_size_of_one_area = 0;
     
