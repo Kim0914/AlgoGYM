@@ -13,5 +13,6 @@ string solution(vector<string> participant, vector<string> completion) {
     for(auto i : info){
         if(i.second % 2 == 1) answer = i.first;
     }
+    
     return answer;
 }
