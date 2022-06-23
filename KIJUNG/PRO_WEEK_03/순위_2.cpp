@@ -25,7 +25,11 @@ int solution(int n, vector<vector<int>> results) {
     FOR(i,1,n+1){
         answer++;
         FOR(j,1,n+1){
+<<<<<<< Updated upstream
             if(!relation[i][j] && !relation[j][i]) {
+=======
+            if(!relation[i][j] && !relation[j][i] && i!=j) {
+>>>>>>> Stashed changes
                 answer--;
                 break;
             }
