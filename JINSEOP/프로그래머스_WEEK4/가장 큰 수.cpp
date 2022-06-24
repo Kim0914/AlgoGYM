@@ -5,7 +5,7 @@ using namespace std;
 
 struct cmp {
     bool operator()(string a, string b) {
-        return a + b < b + a; // 핵심 
+        return a + b < b + a; // 핵심 Code!
     }
 };
 priority_queue<string, vector<string>, cmp> classifier;
