@@ -172,5 +172,6 @@
     * 6.23: K번째 수[LEVEL 1], 있었는데요 없었습니다[LEVEL 3]
     * 6.24: [가장 큰 수[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/42746), [소수 찾기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/42839)
     * 6.25: [모의고사[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/42840), [다단계 칫솔 판매[LEVEL 3]](https://programmers.co.kr/learn/courses/30/lessons/77486)
+    * 6.26: [조이스틱[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/42860), [최솟값 구하기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/59038)
  
   
