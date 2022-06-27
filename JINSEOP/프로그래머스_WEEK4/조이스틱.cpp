@@ -27,5 +27,5 @@ int solution(string name) {
     
     if(answer != 0) answer += turn; // A로만 구성된 name일 때,
 				    // turn을 더해주지 않도록.
-	return answer;
+    return answer;
 }
