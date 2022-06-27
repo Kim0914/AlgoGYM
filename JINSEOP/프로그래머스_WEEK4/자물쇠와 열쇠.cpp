@@ -49,7 +49,6 @@ int main() {
             }
         }
     }
-
     if (find_key) cout << "true";
     else cout << "false";
 
