@@ -173,6 +173,8 @@
     * 6.24: [가장 큰 수[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/42746), [소수 찾기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/42839)
     * 6.25: [모의고사[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/42840), [다단계 칫솔 판매[LEVEL 3]](https://programmers.co.kr/learn/courses/30/lessons/77486)
     * 6.26: [조이스틱[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/42860), [최솟값 구하기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/59038)
-    * 6.27:; [체육복[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/42862), [자물쇠와 열쇠[LEVEL 3]](https://programmers.co.kr/learn/courses/30/lessons/60059)
+    * 6.27: [체육복[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/42862), [자물쇠와 열쇠[LEVEL 3]](https://programmers.co.kr/learn/courses/30/lessons/60059)
+    * 6.28: [동명 동물 수 찾기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/59041), [이름에 el이 들어가는 동물 찾기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/59047)
+    
  
   
