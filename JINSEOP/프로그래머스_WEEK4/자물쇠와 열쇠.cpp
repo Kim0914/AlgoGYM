@@ -1,9 +1,10 @@
 #include <string>
 #include <vector>
-
+#include <iostream>
 using namespace std;
 
 bool find_key = false;
+
 void rot_clock(vector<vector<int>>& key) {
     int limit = key.size();
     vector<vector<int>> temp(limit, vector<int>(limit, 0));
@@ -34,9 +35,10 @@ int is_key(int st_x, int st_y, vector<vector<int>> key, vector<vector<int>> lock
     else return false;
 }
 
-bool solution(vector<vector<int>> key, vector<vector<int>> lock) {
-    bool answer = true;
-    
+int main() {
+    vector<vector<int>> key = { {0,0,0}, {1,0,0}, {0,1,1} };
+    vector<vector<int>> lock = { {1,1,1}, {1,1,0}, {1,0,1} };
+
     for (int i = 0; i < lock.size(); i++) {
         if (find_key) break;
         for (int j = 0; j < lock.size(); j++) {
@@ -47,9 +49,9 @@ bool solution(vector<vector<int>> key, vector<vector<int>> lock) {
             }
         }
     }
-    
-    if (find_key) answer = true;
-    else answer = false;
-    
-    return answer;
+
+    if (find_key) cout << "true";
+    else cout << "false";
+
+    return 0;
 }
