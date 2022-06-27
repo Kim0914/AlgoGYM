@@ -14,6 +14,7 @@ int solution(string name) {
     for(int i = 0; i<name.size(); i++){
         answer += up_down(name[i]);
         int index = i+1;
+	    
         while(index < name.size() && name[index] == 'A')
             index++;
         
@@ -21,7 +22,7 @@ int solution(string name) {
         int b = name.size() - index;
         turn = min(turn, min(2*a+b, a+2*b));
     }
-    
+  
     answer += turn;
 	return answer;
 }
