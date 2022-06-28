@@ -176,5 +176,8 @@
     * 6.27: [체육복[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/42862), [자물쇠와 열쇠[LEVEL 3]](https://programmers.co.kr/learn/courses/30/lessons/60059)
     * 6.28: [동명 동물 수 찾기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/59041), [이름에 el이 들어가는 동물 찾기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/59047)
     
+  * 5주차
+    * 6.29: [모든 레코드 조회하기[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/59034), [셔틀버스[LEVEL 3]]( https://programmers.co.kr/learn/courses/30/lessons/17678)
+   
  
   
