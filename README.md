@@ -179,8 +179,9 @@
   * 5주차
     * 6.29: [모든 레코드 조회하기[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/59034), [셔틀버스[LEVEL 3]]( https://programmers.co.kr/learn/courses/30/lessons/17678)
     * 6.30: [게임 맵 최단거리[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/1844), [예상 대진표[LEVEL 2]]( https://programmers.co.kr/learn/courses/30/lessons/12985)
-    * 7.1 : [폰켓몬[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/1845), [표 편집[LEVEL 3]](
+    * 7.1: [폰켓몬[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/1845), [표 편집[LEVEL 3]](
     https://programmers.co.kr/learn/courses/30/lessons/81303)
+    * 7.2: [순위 검색[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/72412), [후보키[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/42890)
    
  
   
