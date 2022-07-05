@@ -185,4 +185,7 @@
     * 7.3: [이름이 없는 동물의 [LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/59039), [보석 쇼핑[LEVEL 3]](https://programmers.co.kr/learn/courses/30/lessons/67258)
     * 7.4: [괄호 회전하기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/76502), [배달[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/12978)
     * 7.5: [최댓값 구하기[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/59415), [불량 사용자[LEVEL 3]](https://programmers.co.kr/learn/courses/30/lessons/64064)
+    
+  * 6주차
+    * 7.6: [2xn 타일링[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12900), [위장[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42578)
   
