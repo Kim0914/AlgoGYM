@@ -189,4 +189,5 @@
   * 6주차
     * 7.6: [2xn 타일링[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12900), [위장[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42578)
     * 7.7: [실패율[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/42889), [GPS[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/1837)
+    * 7.8: [다리를 지나는 트럭[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42583), [H-Index[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42747)
   
