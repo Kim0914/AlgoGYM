@@ -20,4 +20,5 @@ int solution(int n) {
         idx *= 3;
     }
     return answer;
+    
 }
