@@ -194,4 +194,6 @@
     * 7.10: [카펫[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42842), [큰 수 만들기[LEVEL2]](https://school.programmers.co.kr/learn/courses/30/lessons/42883)
     * 7.11: [3진법 뒤집기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/68935), [이중 우선순위 큐[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42628)
     * 7.12: [동물 수 구하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59406), [입양 시각 구하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59412)
-    
+  
+  * 7주차
+    * 7.13: [예산[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12982), [등굣길[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42898)
