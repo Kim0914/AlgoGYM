@@ -197,3 +197,5 @@
   
   * 7주차
     * 7.13: [예산[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12982), [등굣길[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42898)
+    * 7.14: [NULL 처리하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59410), [중성화 여부 판단하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59409)
+    
