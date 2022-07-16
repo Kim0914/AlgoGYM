@@ -11,11 +11,9 @@ void can_pop(int st_x, int st_y, vector<string> copy_board, vector<string>& boar
     char stand = copy_board[st_x][st_y];
     if (stand == '#') return;
 
-    for (int i = st_x; i < st_x + 2; i++) {
-        for (int j = st_y; j < st_y + 2; j++) {
+    for (int i = st_x; i < st_x + 2; i++)
+        for (int j = st_y; j < st_y + 2; j++)
             if (stand != copy_board[i][j] || copy_board[i][j] == '#') return;
-        }
-    }
 
     no_pop = false;
     for (int i = st_x; i < st_x + 2; i++)
@@ -27,13 +25,16 @@ void pull_down(vector<string>& board) {
     int iter = 0;
 
     while (true) {
-        if (iter >= board.size()) break;
+        if (iter >= board[0].size()) break;
 
         bool no_sharp = true;
-        for (int i = 0; i < board.size()-1; i++) {
-            if (board[i + 1][iter] == '#') {
+        for (int i = board.size()-1; i > 0; i--) {
+            if (board[i][iter] == '#' && board[i - 1][iter] != '#') {
                 no_sharp = false;
-                swap(board[i][iter], board[i + 1][iter]);
+                for (int j = i - 1; j < board.size()-1; j++) {
+                    if (board[j + 1][iter] != '#') break;
+                    swap(board[j][iter], board[j+1][iter]);
+                }
             }
         }
 
@@ -66,8 +67,8 @@ int solution(int m, int n, vector<string> board) {
                 can_pop(i, j, copy_board, board);
 
         pull_down(board);
-        copy_board = board;
 
+        copy_board = board;
         if (no_pop) break;
     }
 
