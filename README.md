@@ -199,3 +199,4 @@
     * 7.13: [예산[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12982), [등굣길[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42898)
     * 7.14: [NULL 처리하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59410), [중성화 여부 판단하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59409)
     * 7.15: [역순 정렬하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59035), [단어 변환[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/43163)
+    * 7.16: [피로도[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/87946), [프렌즈 4블록[LEVEL2]](https://school.programmers.co.kr/learn/courses/30/lessons/17679)
