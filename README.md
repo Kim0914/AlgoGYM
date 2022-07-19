@@ -202,3 +202,4 @@
     * 7.16: [피로도[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/87946), [프렌즈 4블록[LEVEL2]](https://school.programmers.co.kr/learn/courses/30/lessons/17679)
     * 7.17: [이름이 있는 동물의 아이디[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59407), [오랜 기간 보호한 동물[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/59044)
     * 7.18: [2개 이하로 다른 비트[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/77885), [삼각 달팽이[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/68645)
+    * 7.19: [2개 뽑아서 더하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/68644), [헤비 유저가 소유한 장소[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/77487)
