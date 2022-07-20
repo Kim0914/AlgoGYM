@@ -203,3 +203,6 @@
     * 7.17: [이름이 있는 동물의 아이디[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59407), [오랜 기간 보호한 동물[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/59044)
     * 7.18: [2개 이하로 다른 비트[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/77885), [삼각 달팽이[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/68645)
     * 7.19: [2개 뽑아서 더하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/68644), [헤비 유저가 소유한 장소[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/77487)
+
+  * 8주차
+    * 7.20 [영어 끝말잇기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12981), [주식가격[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42584)
