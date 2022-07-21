@@ -205,4 +205,5 @@
     * 7.19: [2개 뽑아서 더하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/68644), [헤비 유저가 소유한 장소[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/77487)
 
   * 8주차
-    * 7.20 [영어 끝말잇기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12981), [주식가격[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42584)
+    * 7.20: [영어 끝말잇기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12981), [주식가격[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42584)
+    * 7.21: [아픈 동물 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59036), [합승 택시 요금[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/72413)
