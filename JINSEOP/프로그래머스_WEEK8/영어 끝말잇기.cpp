@@ -19,7 +19,6 @@ void word_relay(int n, vector<string> words) {
             ans.second = cnt;
             return;
         }
-        
         if (v_size == validator.size()) {
             ans.first = person_cnt;
             ans.second = cnt;
