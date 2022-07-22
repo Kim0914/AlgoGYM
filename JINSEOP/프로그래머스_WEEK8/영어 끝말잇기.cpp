@@ -19,16 +19,17 @@ void word_relay(int n, vector<string> words) {
             ans.second = cnt;
             return;
         }
+        
         if (v_size == validator.size()) {
             ans.first = person_cnt;
             ans.second = cnt;
             return;
         }
-
+        
         person_cnt++;
         if (person_cnt > n) person_cnt = 1;
     }
-
+    
     person_cnt = 0; cnt = 0;
 }
 
