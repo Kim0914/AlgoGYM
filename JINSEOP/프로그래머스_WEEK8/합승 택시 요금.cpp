@@ -41,6 +41,7 @@ int solution(int n, int s, int a, int b, vector<vector<int>> fares) {
     for (int i = 1; i <= n; i++)
         answer = min(answer, dist[s][i] + dist[i][a] + dist[i][b]);
         // 이 말은 시작 ==> 특정 지점 + 특정 지점 ==> A + 특정 지점 ==> B 가 된다.
-
+        // 그 중 비용이 최소가 되는 경로가 저장된다.
+    
     return answer;
 }
