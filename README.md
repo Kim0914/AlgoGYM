@@ -209,4 +209,4 @@
     * 7.21: [아픈 동물 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59036), [합승 택시 요금[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/72413)
     * 7.22: [구명보트[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42885), [중복 제거하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59408)
     * 7.23: [2016년 [LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12901), [경주로 건설[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/67259)
-    * 7.24: [3xN 타일링[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12902), [DATETIME에서 DATE로 변환[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59414)
+    * 7.24: [교점에 별 만들기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/87377), [전력망을 둘로 나누기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
