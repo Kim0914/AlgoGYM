@@ -6,6 +6,7 @@ using namespace std;
 long long max_x = LLONG_MIN, max_y = LLONG_MIN, min_x = LLONG_MAX, min_y = LLONG_MAX;
 vector<pair<long long, long long>> intersections;
 vector<string> res;
+
 void get_intersection(vector<vector<int>> line) {
     for (int i = 0; i < line.size(); i++) {
         for (int j = i+1; j < line.size(); j++) {
