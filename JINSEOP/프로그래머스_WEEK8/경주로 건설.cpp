@@ -24,6 +24,7 @@ void backtrack(int direction, int st_x, int st_y, int cost, vector<vector<int>> 
         if ((nx >= 0 && nx < board.size()) && (ny >= 0 && ny < board.size())) {
             if (!visit[nx][ny] && board[nx][ny] == 0) {
                 visit[nx][ny] = true;
+                
                 if (direction != i + 1 && direction != 9) {
                     backtrack(i + 1, nx, ny, cost + CORNER, board, visit);
                     visit[nx][ny] = false;
