@@ -55,10 +55,9 @@ int solution(int n, vector<vector<int>> wires) {
                 cnt = bfs(j, adj_list, visit);
             }
         }
-
+        
         answer = min(answer, abs(p_cnt - cnt));
         clear_map(adj_list, visit);
     }
-
     return answer;
 }
