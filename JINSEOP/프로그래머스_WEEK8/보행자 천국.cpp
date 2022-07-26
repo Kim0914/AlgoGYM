@@ -14,6 +14,7 @@ void backtrack(int x, int y, int past, vector<vector<int>> city_map, vector<vect
     for (int i = 0; i < 2; i++) {
         if (city_map[x][y] == 2)
             if (i + 1 != past && past != 9) continue;
+    }
 
         int nx = x + dx[i];
         int ny = y + dy[i];
@@ -29,7 +30,7 @@ void backtrack(int x, int y, int past, vector<vector<int>> city_map, vector<vect
 
 int solution(int m, int n, vector<vector<int>> city_map) {
     int answer = 0;
-
+    
     vector<vector<bool>> visit(m, (vector<bool>(n, 0)));
     backtrack(0, 0, 9, city_map, visit);
 
