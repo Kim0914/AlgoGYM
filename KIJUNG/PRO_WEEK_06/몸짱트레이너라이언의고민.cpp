@@ -1,6 +1,5 @@
 #include <vector>
 #include <algorithm>
-#include <iostream>
 
 using namespace std;
 
@@ -15,7 +14,6 @@ int solution(int n, int m, vector<vector<int>> timetable) {
     int answer = 0;
     int maxCnt = 0;
     
-    //가장 겹치는 시간대
     for(int i=600;i<=1320;i++){
         int cnt = 0;
         for(vector<int> time: timetable){
@@ -25,19 +23,22 @@ int solution(int n, int m, vector<vector<int>> timetable) {
     }
     if(maxCnt==1) return 0;
     
-    //최소 락커 알고리즘
-    for(int k=(n-1)*2;k>0;k--){
-        vector<pair<int,int>> v;
-        v.push_back(make_pair(1,1));
-        for(int i=1;i<n+1;i++){
-            for(int j=1;j<n+1;j++){
-                if(check(k,i,j,v)) v.push_back(make_pair(i,j));
+    for(int firstX=1;firstX<n+1;firstX++){
+        for(int firstY=1;firstY<n+1;firstY++){
+            for(int k=(n-1)*2;k>0;k--){
+                vector<pair<int,int>> v;
+                v.push_back(make_pair(firstX,firstY));
+                for(int i=1;i<n+1;i++){
+                    for(int j=1;j<n+1;j++){
+                        if(check(k,i,j,v)) v.push_back(make_pair(i,j));
+                    }
+                }
+                
+                if(maxCnt<=v.size()) {
+                    answer = max(answer,k);
+                    break;
+                }
             }
-        }
-        // cout << "k: " << k << ", maxCnt: "<<v.size() << "\n";
-        if(maxCnt<=v.size()) {
-            answer = k;
-            break;
         }
     }
     
