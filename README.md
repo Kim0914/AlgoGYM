@@ -212,3 +212,6 @@
     * 7.24: [교점에 별 만들기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/87377), [전력망을 둘로 나누기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
     * 7.25: [어린 동물 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59037), [보행자 천국[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/1832)
     * 7.26: [모음 사전[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/84512), [캐시[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/17680)
+    
+  * 9주차
+    * 7.27: [최소 직사각형[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/86491), [몸짱 트레이너 라이언의 고민[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/1838)
