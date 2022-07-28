@@ -215,3 +215,5 @@
     
   * 9주차
     * 7.27: [최소 직사각형[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/86491), [몸짱 트레이너 라이언의 고민[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/1838)
+    * 7.28: [이진 변환 반복하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/70129), [점프와 순간 이동[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12980)
+    
