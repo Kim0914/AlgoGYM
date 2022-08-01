@@ -1,0 +1,10 @@
+SELECT ANIMAL_ID, NAME, LEFT(DATE(DATETIME), 10) FROM ANIMAL_INS
+ORDER BY ANIMAL_ID ASC
+
+# LEFT() 이용한 풀이
+# ==================================================================
+SELECT ANIMAL_ID, NAME, DATE_FORMAT(DATETIME, "%Y-%m-%d") 
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID ASC
+
+# DATE_FORMAT() 이용한 풀이
