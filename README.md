@@ -219,3 +219,4 @@
     * 7.29: [나머지가 1이 되는 수 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/87389), [베스트 앨범[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
     * 7.30: [3xn 타일링[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12902), [DATETIME에서 DATE로 형 변환[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59414)
     * 7.31: [동물의 아이디와 이름[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59403), [아이템 줍기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/87694)
+    * 8.1: [n^2배열 자르기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/87390), [쿼드압축 후 개수 세기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/68936)
