@@ -26,6 +26,5 @@ vector<string> solution(vector<vector<string>> tickets) {
 
     sort(tickets.begin(), tickets.end());
     dfs("ICN", tickets, answer, 0);
-
     return answer;
 }
