@@ -224,3 +224,5 @@
     
   * 10주차
     * 8.3: [스킬트리[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/49993), [방문 길이[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/49994)
+    * 8.4: 비밀 지도[LEVEL 2], 오랜기간 보호한 동물(2)[LEVEL 3]
+    
