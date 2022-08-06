@@ -1,0 +1,145 @@
+from collections import deque
+
+puzzles = []
+blanks = []
+dx = [-1, 1, 0, 0]
+dy = [0, 0, 1, -1]
+rx = [1, -1, -1, 1]
+ry = [1, 1, -1, -1]
+visited_board = [[0] * 51 for _ in range(51)]
+visited_puzzle = [[0] * 51 for _ in range(51)]
+
+def searchBoard(x, y, game_board):
+    blank = []
+    
+    q = deque()
+    q.append((x, y))
+    
+    while q:
+        top = q.popleft()
+        x, y = top[0], top[1]
+        visited_board[x][y] = 1
+        blank.append((x, y))
+        
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            
+            if 0 <= nx < len(game_board) and 0 <= ny < len(game_board):
+                if game_board[nx][ny] == 0 and visited_board[nx][ny] == 0:
+                    q.append((nx, ny))
+    
+    blanks.append(blank)
+
+    
+def searchPuzzle(x, y, table):
+    puzzle = []
+    
+    q = deque()
+    q.append((x, y))
+    
+    while q:
+        top = q.popleft()
+        x, y = top[0], top[1]
+        visited_puzzle[x][y] = 1
+        puzzle.append((x, y))
+        
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            
+            if 0 <= nx < len(table) and 0 <= ny < len(table):
+                if table[nx][ny] == 1 and visited_puzzle[nx][ny] == 0:
+                    q.append((nx, ny))
+    
+    puzzles.append(puzzle)
+    
+    
+def check(diff_top, diff_puz):    
+    for i in range(4):
+        rotated_puz = []
+        for j in range(len(diff_puz)):
+            nx = diff_puz[j][0] * rx[i]
+            ny = diff_puz[j][1] * ry[i]
+            rotated_puz.append((nx, ny))
+        
+        if diff_top == rotated_puz:
+            return True
+    
+    return False
+    
+def solution(game_board, table):
+    answer = -1
+    
+    
+    for i in range(len(table)):
+        for j in range(len(table)):
+            if table[i][j] == 1 and visited_puzzle[i][j] == 0:
+                searchPuzzle(i, j, table)
+    
+    puzzles.sort(key=lambda x:len(x))
+    
+    
+    for i in range(len(game_board)):
+        for j in range(len(game_board)):
+            if game_board[i][j] == 0 and visited_board[i][j] == 0:
+                searchBoard(i, j, game_board)
+                
+    blanks.sort(key=lambda x:len(x))
+    
+    
+    while blanks:
+        top = blanks.pop(0)
+        
+        if len(top) == 1:
+            if len(puzzles[0]) == 1:
+                while top:
+                    pop = top.pop(0)
+                    x, y = pop[0], pop[1]
+                    game_board[x][y] = 1
+                puzzles.pop(0)
+        
+        elif len(top) == 2:
+            if len(puzzles[0]) == 2:
+                while top:
+                    pop = top.pop(0)
+                    x, y = pop[0], pop[1]
+                    game_board[x][y] = 1
+                puzzles.pop(0)
+                
+        else:
+            while True:
+                if len(top) == len(puzzles[0]):
+                    break
+                puzzles.pop(0)
+            
+            
+            diff_top = []
+            diff_puz = []
+            
+            for i in range(len(top)):
+                x, y = top[i][0], top[i][1]
+                for j in range(i+1, len(top)):
+                    n_x, n_y = top[j][0], top[j][1]
+                    
+                    diff_top.append((n_x - x, n_y - y))
+                    
+            for i in range(len(puzzles[0])):
+                x, y = puzzles[0][i][0], puzzles[0][i][1]
+                for j in range(i+1, len(puzzles[0])):
+                    n_x, n_y = puzzles[0][j][0], puzzles[0][j][1]
+                    
+                    diff_puz.append((n_x - x, n_y - y))
+                    
+            
+            if check(diff_top, diff_puz):
+                while top:
+                    pop = top.pop(0)
+                    x, y = pop[0], pop[1]
+                    game_board[x][y] = 1
+                puzzles.pop(0)
+    
+    for g in game_board:
+        print(g)
+    
+    return answer
