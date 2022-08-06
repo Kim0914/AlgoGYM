@@ -224,5 +224,8 @@
     
   * 10주차
     * 8.3: [스킬트리[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/49993), [방문 길이[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/49994)
-    * 8.4: 비밀 지도[LEVEL 2], 오랜기간 보호한 동물(2)[LEVEL 3]
-    
+    * 8.4: 비밀 지도[LEVEL 1], 오랜기간 보호한 동물(2)[LEVEL 3]
+    * 8.5: 방금그곡[LEVEL 2], 가장 큰 정사각형 찾기[LEVEL 2]
+    * 8.6: [가운데 글자 가져오기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12903), [퍼즐 조각 채우기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/84021)
+
+    * 7.29: [나머지가 1이 되는 수 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/87389), [베스트 앨범[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
