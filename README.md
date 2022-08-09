@@ -228,5 +228,7 @@
     * 8.5: 방금그곡[LEVEL 2], 가장 큰 정사각형 찾기[LEVEL 2]
     * 8.6: [가운데 글자 가져오기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12903), [퍼즐 조각 채우기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/84021)
     * 8.7: [압축[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/17684), [파일명 정렬[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/17686)
+    * 8.8: [여러 기준으로 정렬하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59404), [광고 삽입[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/72414)
+    * 8.9: [올바른 괄호[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12909), [n진수 게임[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/17687)
 
     
