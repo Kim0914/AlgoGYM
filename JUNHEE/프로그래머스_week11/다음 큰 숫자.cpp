@@ -22,6 +22,5 @@ int solution(int n) {
         if(t_count == count) flag = false;
         else next++;
     }
-    cout << next;
     return next;
 }
