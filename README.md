@@ -233,6 +233,7 @@
     
   * 11주차
     * 8.10: [다트 게임[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/17682), [기둥과 보 설치[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/60061)
-    * **8.11 ~ 8.31일까지 보충할 부분 보충하고 부족한 개념 정리.**.
-
+    * **8.11 ~ 9.5일까지 보충할 부분 보충하고 부족한 개념 정리.**.
+    * 9.6: [다음 큰 숫자[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12911), [땅 따먹기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12913)
+   
     
