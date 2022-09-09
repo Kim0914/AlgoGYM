@@ -237,5 +237,6 @@
     * 9.6: [다음 큰 숫자[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12911), [땅 따먹기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12913)
     * 9.7: [상위 n개 레코드[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59405), [공 이동 시뮬레이션[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/87391)
     * 9.8: [N개의 최소공배수[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12953), [N-Queen[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12952)
+    * **9.9 ~ 9.12 (추석 휴무)**
    
     
