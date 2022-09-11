@@ -238,5 +238,8 @@
     * 9.7: [상위 n개 레코드[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59405), [공 이동 시뮬레이션[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/87391)
     * 9.8: [N개의 최소공배수[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12953), [N-Queen[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12952)
     * **9.9 ~ 9.12 (추석 휴무)**
+    
+  * 12주차
+    * 9.13: [x만큼 간격이 있는 n개의 숫자[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12954). [모두 0으로 만들기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/76503)
    
     
