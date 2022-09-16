@@ -6,7 +6,7 @@
 
 |김동욱|채기중|
 |:-:|:-:|
-|<img src="https://user-images.githubusercontent.com/71700079/183433257-20338d29-4767-4225-a1ba-ed68fc17b4f9.png" width="100" height="100">|<img src="https://user-images.githubusercontent.com/71700079/183433257-20338d29-4767-4225-a1ba-ed68fc17b4f9.png" width="100" height="100">|
+|<img src="https://user-images.githubusercontent.com/71700079/190619406-503a09ff-d4a9-4837-bae2-5c78c17ed60a.jpg" width="100" height="100">|<img src="https://user-images.githubusercontent.com/71700079/190619439-ebaed8d0-a1df-4a9c-88b5-89eeaeb6eba8.jpg" width="100" height="100">|
 |Trainor|Trainor|
 |kosa0914@gmail.com  |daiywlf5251@gmail.com|
 </div>
