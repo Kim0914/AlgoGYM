@@ -1,10 +1,10 @@
 # 알고리즘 GYM에 오신 것을 환영합니다
 
->> <center>__*꾸준히 하는 것이 힘이다 (Keep Going)*__</center>  
+>> <p align="center">__*꾸준히 하는 것이 힘이다 (Keep Going)*__</p>  
 
 |김동욱|채기중|
 |:-:|:-:|
-|<img src="https://user-images.githubusercontent.com/71700079/183434526-d6ff6eb5-512a-41b9-9965-c53f2dd2c31b.png" width="100" height="100">|<img src="https://user-images.githubusercontent.com/71700079/183433257-20338d29-4767-4225-a1ba-ed68fc17b4f9.png" width="100" height="100">|
+|<img src="https://user-images.githubusercontent.com/71700079/183433257-20338d29-4767-4225-a1ba-ed68fc17b4f9.png" width="100" height="100">|<img src="https://user-images.githubusercontent.com/71700079/183433257-20338d29-4767-4225-a1ba-ed68fc17b4f9.png" width="100" height="100">|
 |Trainor|Trainor|
 |[Github](https://github.com/Jinseop-Sim)|[Github](https://github.com/NamWoo77)|
 |kosa0914@gmail.com|daiywlf5251@gmail.com|
