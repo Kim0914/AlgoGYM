@@ -1,6 +1,8 @@
 # 알고리즘 GYM에 오신 것을 환영합니다
 
-<p align="center"> >> __*꾸준히 하는 것이 힘이다 (Keep Going)*__</p>  
+<div align="center">  
+ 
+ >> __*꾸준히 하는 것이 힘이다 (Keep Going)*__  
 
 |김동욱|채기중|
 |:-:|:-:|
@@ -8,7 +10,7 @@
 |Trainor|Trainor|
 |[Github](https://github.com/Jinseop-Sim)|[Github](https://github.com/NamWoo77)|
 |kosa0914@gmail.com|daiywlf5251@gmail.com|
-</p>
+</div>
 
 * * *
 <details>
