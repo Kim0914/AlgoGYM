@@ -1,8 +1,6 @@
 # 알고리즘 GYM에 오신 것을 환영합니다
 
-<p align="center>  
-
->> __*꾸준히 하는 것이 힘이다 (Keep Going)*__  
+>> <center>__*꾸준히 하는 것이 힘이다 (Keep Going)*__</center>  
 
 |김동욱|채기중|
 |:-:|:-:|
