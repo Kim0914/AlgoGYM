@@ -143,6 +143,7 @@
 * **오늘의 문제**
 <details>
 <summary>1주차</summary>  
+
   * 1주차
     * 6.1: 신고 결과 받기[LEVEL 1], 추석 트래픽[LEVEL 3]
     * 6.2: 문자열 압축[LEVEL 2], 오픈 채팅방[LEVEL 2]
@@ -152,9 +153,9 @@
     * 6.6: 멀쩡한 사각형[LEVEL 2], 124 나라의 숫자[LEVEL 2]
     * 6.7: 키패드 누르기[LEVEL 1], 가장 먼 노드[LEVEL 3]
 </details>
-
 <details>
 <summary>2주차</summary>  
+ 
   * 2주차
     * 6.8: 타겟 넘버[LEVEL 2], 고양이와 개는 몇 마리 있을까[LEVEL2]
     * 6.9: 숫자 문자열과 영단어[LEVEL 1], 없어진 기록 찾기[LEVEL 3]
@@ -164,6 +165,8 @@
     * 6.13: 없는 숫자 더하기[LEVEL 1], 리틀 프렌즈 사천성[LEVEL 3]
     * 6.14: 행렬 테두리 회전하기[LEVEL 2], 메뉴 리뉴얼[LEVEL 2]
 </details>
+<details>
+<summary>3주차</summary>  
  
   * 3주차
     * 6.15: 음양 더하기[LEVEL 1], 디스크 컨트롤러[LEVEL 3]
@@ -173,6 +176,9 @@
     * 6.19: 소수 만들기[LEVEL 1], 네트워크[LEVEL 3]
     * 6.20: 튜플[LEVEL 2], 빛의 경로 싸이클[LEVEL 2]
     * 6.21: 완주하지 못한 선수[LEVEL 1], 순위[LEVEL 3]
+</details>
+<details>
+<summary>4주차</summary>  
 
   * 4주차
     * 6.22: 전화번호 목록[LEVEL 2], 프린터[LEVEL 2]
@@ -182,7 +188,8 @@
     * 6.26: [조이스틱[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/42860), [최솟값 구하기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/59038)
     * 6.27: [체육복[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/42862), [자물쇠와 열쇠[LEVEL 3]](https://programmers.co.kr/learn/courses/30/lessons/60059)
     * 6.28: [동명 동물 수 찾기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/59041), [이름에 el이 들어가는 동물 찾기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/59047)
-    
+</details>
+
   * 5주차
     * 6.29: [모든 레코드 조회하기[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/59034), [셔틀버스[LEVEL 3]]( https://programmers.co.kr/learn/courses/30/lessons/17678)
     * 6.30: [게임 맵 최단거리[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/1844), [예상 대진표[LEVEL 2]]( https://programmers.co.kr/learn/courses/30/lessons/12985)
