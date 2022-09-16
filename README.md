@@ -243,6 +243,6 @@
     * 9.13: [x만큼 간격이 있는 n개의 숫자[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12954). [모두 0으로 만들기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/76503)
     * 9.14: [JadenCase 문자열 만들기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12951), [행렬의 곱셈[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12949)
     * 9.15: [행렬의 덧셈[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12950), [110 옮기기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/77886)
-    * 9.16: [멀리 뛰기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12914), [[]]()
+    * 9.16: [멀리 뛰기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12914), [튜플[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/64065)
    
     
