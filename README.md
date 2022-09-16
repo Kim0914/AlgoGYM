@@ -8,7 +8,9 @@
 |:-:|:-:|
 |<img src="https://user-images.githubusercontent.com/71700079/183433257-20338d29-4767-4225-a1ba-ed68fc17b4f9.png" width="100" height="100">|<img src="https://user-images.githubusercontent.com/71700079/183433257-20338d29-4767-4225-a1ba-ed68fc17b4f9.png" width="100" height="100">|
 |Trainor|Trainor|
-|[Github](https://github.com/Jinseop-Sim)|[Github](https://github.com/NamWoo77)|
+|  <a href = "https://jinseop-sim.github.io/">
+   <img src="https://img.shields.io/badge/GitBlog-181717?style=flat&logo=GitHub&logoColor=white&link=https://jinseop-sim.github.io/">
+   </a>|[Github](https://github.com/NamWoo77)|
 |kosa0914@gmail.com|daiywlf5251@gmail.com|
 </div>
 
