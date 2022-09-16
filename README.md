@@ -8,7 +8,7 @@
 |:-:|:-:|
 |<img src="https://user-images.githubusercontent.com/71700079/183433257-20338d29-4767-4225-a1ba-ed68fc17b4f9.png" width="100" height="100">|<img src="https://user-images.githubusercontent.com/71700079/183433257-20338d29-4767-4225-a1ba-ed68fc17b4f9.png" width="100" height="100">|
 |Trainor|Trainor|
-|kosa0914@gmail.com|daiywlf5251@gmail.com|
+|kosa0914@gmail.com  |daiywlf5251@gmail.com|
 </div>
 
 * * *
@@ -161,7 +161,7 @@
 **고생많았습니당 ^.^**
 </details>  
 
-- - -  
+___
 ### 프로그래머스 LEVEL 1 ~ 3
 * **6.1 ~ 모든 문제 다 풀때 까지 / 매일 2문제씩**
 
