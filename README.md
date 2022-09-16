@@ -144,35 +144,35 @@
 <details>
 <summary>1주차</summary>  
 
-    * 6.1: 신고 결과 받기[LEVEL 1], 추석 트래픽[LEVEL 3]
-    * 6.2: 문자열 압축[LEVEL 2], 오픈 채팅방[LEVEL 2]
-    * 6.3: 로또의 최고,최저 순위[LEVEL 1], N으로 표현[LEVEL 3]
-    * 6.4: 카카오프렌즈 컬러링북[LEVEL 2], 단체사진 찍기[LEVEL 2]
-    * 6.5: 신규 아이디 추천[LEVEL 1], 입국심사[LEVEL 3]
-    * 6.6: 멀쩡한 사각형[LEVEL 2], 124 나라의 숫자[LEVEL 2]
-    * 6.7: 키패드 누르기[LEVEL 1], 가장 먼 노드[LEVEL 3]
+* 6.1: 신고 결과 받기[LEVEL 1], 추석 트래픽[LEVEL 3]
+* 6.2: 문자열 압축[LEVEL 2], 오픈 채팅방[LEVEL 2]
+* 6.3: 로또의 최고,최저 순위[LEVEL 1], N으로 표현[LEVEL 3]
+* 6.4: 카카오프렌즈 컬러링북[LEVEL 2], 단체사진 찍기[LEVEL 2]
+* 6.5: 신규 아이디 추천[LEVEL 1], 입국심사[LEVEL 3]
+* 6.6: 멀쩡한 사각형[LEVEL 2], 124 나라의 숫자[LEVEL 2]
+* 6.7: 키패드 누르기[LEVEL 1], 가장 먼 노드[LEVEL 3]
 </details>
 <details>
 <summary>2주차</summary>  
  
-    * 6.8: 타겟 넘버[LEVEL 2], 고양이와 개는 몇 마리 있을까[LEVEL2]
-    * 6.9: 숫자 문자열과 영단어[LEVEL 1], 없어진 기록 찾기[LEVEL 3]
-    * 6.10: 기능개발[LEVEL 2], 더 맵게[LEVEL 2]
-    * 6.11: 크레인 인형뽑기 게임[LEVEL 1], 브라이언의 고민[LEVEL 3]
-    * 6.12: 루시와 엘라 찾기[LEVEL 2], 짝지어 제거하기[LEVEL 2]
-    * 6.13: 없는 숫자 더하기[LEVEL 1], 리틀 프렌즈 사천성[LEVEL 3]
-    * 6.14: 행렬 테두리 회전하기[LEVEL 2], 메뉴 리뉴얼[LEVEL 2]
+* 6.8: 타겟 넘버[LEVEL 2], 고양이와 개는 몇 마리 있을까[LEVEL2]
+* 6.9: 숫자 문자열과 영단어[LEVEL 1], 없어진 기록 찾기[LEVEL 3]
+* 6.10: 기능개발[LEVEL 2], 더 맵게[LEVEL 2]
+* 6.11: 크레인 인형뽑기 게임[LEVEL 1], 브라이언의 고민[LEVEL 3]
+* 6.12: 루시와 엘라 찾기[LEVEL 2], 짝지어 제거하기[LEVEL 2]
+* 6.13: 없는 숫자 더하기[LEVEL 1], 리틀 프렌즈 사천성[LEVEL 3]
+* 6.14: 행렬 테두리 회전하기[LEVEL 2], 메뉴 리뉴얼[LEVEL 2]
 </details>
 <details>
 <summary>3주차</summary>  
  
-    * 6.15: 음양 더하기[LEVEL 1], 디스크 컨트롤러[LEVEL 3]
-    * 6.16: 괄호 변환[LEVEL 2], 뉴스 클러스터링[LEVEL 2]
-    * 6.17: 내적[LEVEL 1], 정수 삼각형[LEVEL 3]
-    * 6.18: 거리두기 확인하기[LEVEL 2], 수식 최대화[LEVEL 2]
-    * 6.19: 소수 만들기[LEVEL 1], 네트워크[LEVEL 3]
-    * 6.20: 튜플[LEVEL 2], 빛의 경로 싸이클[LEVEL 2]
-    * 6.21: 완주하지 못한 선수[LEVEL 1], 순위[LEVEL 3]
+* 6.15: 음양 더하기[LEVEL 1], 디스크 컨트롤러[LEVEL 3]
+* 6.16: 괄호 변환[LEVEL 2], 뉴스 클러스터링[LEVEL 2]
+* 6.17: 내적[LEVEL 1], 정수 삼각형[LEVEL 3]
+* 6.18: 거리두기 확인하기[LEVEL 2], 수식 최대화[LEVEL 2]
+* 6.19: 소수 만들기[LEVEL 1], 네트워크[LEVEL 3]
+* 6.20: 튜플[LEVEL 2], 빛의 경로 싸이클[LEVEL 2]
+* 6.21: 완주하지 못한 선수[LEVEL 1], 순위[LEVEL 3]
 </details>
 <details>
 <summary>4주차</summary>  
@@ -188,86 +188,86 @@
 <details>
 <summary>5주차</summary>  
  
-    * 6.29: [모든 레코드 조회하기[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/59034), [셔틀버스[LEVEL 3]]( https://programmers.co.kr/learn/courses/30/lessons/17678)
-    * 6.30: [게임 맵 최단거리[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/1844), [예상 대진표[LEVEL 2]]( https://programmers.co.kr/learn/courses/30/lessons/12985)
-    * 7.1: [폰켓몬[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/1845), [표 편집[LEVEL 3]](
+* 6.29: [모든 레코드 조회하기[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/59034), [셔틀버스[LEVEL 3]]( https://programmers.co.kr/learn/courses/30/lessons/17678)
+* 6.30: [게임 맵 최단거리[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/1844), [예상 대진표[LEVEL 2]]( https://programmers.co.kr/learn/courses/30/lessons/12985)
+* 7.1: [폰켓몬[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/1845), [표 편집[LEVEL 3]](
     https://programmers.co.kr/learn/courses/30/lessons/81303)
-    * 7.2: [순위 검색[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/72412), [후보키[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/42890)
-    * 7.3: [이름이 없는 동물의 [LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/59039), [보석 쇼핑[LEVEL 3]](https://programmers.co.kr/learn/courses/30/lessons/67258)
-    * 7.4: [괄호 회전하기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/76502), [배달[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/12978)
-    * 7.5: [최댓값 구하기[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/59415), [불량 사용자[LEVEL 3]](https://programmers.co.kr/learn/courses/30/lessons/64064)
+* 7.2: [순위 검색[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/72412), [후보키[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/42890)
+* 7.3: [이름이 없는 동물의 [LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/59039), [보석 쇼핑[LEVEL 3]](https://programmers.co.kr/learn/courses/30/lessons/67258)
+* 7.4: [괄호 회전하기[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/76502), [배달[LEVEL 2]](https://programmers.co.kr/learn/courses/30/lessons/12978)
+* 7.5: [최댓값 구하기[LEVEL 1]](https://programmers.co.kr/learn/courses/30/lessons/59415), [불량 사용자[LEVEL 3]](https://programmers.co.kr/learn/courses/30/lessons/64064)
 </details>
 <details>
 <summary>6주차</summary>  
  
-    * 7.6: [2xn 타일링[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12900), [위장[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42578)
-    * 7.7: [실패율[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/42889), [GPS[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/1837)
-    * 7.8: [다리를 지나는 트럭[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42583), [H-Index[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42747)
-    * 7.9: [약수의 갯수와 덧셈[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/77884), [금과 은 운반하기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/86053)
-    * 7.10: [카펫[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42842), [큰 수 만들기[LEVEL2]](https://school.programmers.co.kr/learn/courses/30/lessons/42883)
-    * 7.11: [3진법 뒤집기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/68935), [이중 우선순위 큐[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42628)
-    * 7.12: [동물 수 구하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59406), [입양 시각 구하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59412)
+* 7.6: [2xn 타일링[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12900), [위장[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42578)
+* 7.7: [실패율[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/42889), [GPS[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/1837)
+* 7.8: [다리를 지나는 트럭[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42583), [H-Index[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42747)
+* 7.9: [약수의 갯수와 덧셈[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/77884), [금과 은 운반하기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/86053)
+* 7.10: [카펫[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42842), [큰 수 만들기[LEVEL2]](https://school.programmers.co.kr/learn/courses/30/lessons/42883)
+* 7.11: [3진법 뒤집기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/68935), [이중 우선순위 큐[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42628)
+* 7.12: [동물 수 구하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59406), [입양 시각 구하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59412)
 </details>
 <details>
 <summary>7주차</summary>  
 
-    * 7.13: [예산[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12982), [등굣길[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42898)
-    * 7.14: [NULL 처리하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59410), [중성화 여부 판단하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59409)
-    * 7.15: [역순 정렬하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59035), [단어 변환[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/43163)
-    * 7.16: [피로도[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/87946), [프렌즈 4블록[LEVEL2]](https://school.programmers.co.kr/learn/courses/30/lessons/17679)
-    * 7.17: [이름이 있는 동물의 아이디[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59407), [오랜 기간 보호한 동물[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/59044)
-    * 7.18: [2개 이하로 다른 비트[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/77885), [삼각 달팽이[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/68645)
-    * 7.19: [2개 뽑아서 더하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/68644), [헤비 유저가 소유한 장소[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/77487)
+* 7.13: [예산[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12982), [등굣길[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42898)
+* 7.14: [NULL 처리하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59410), [중성화 여부 판단하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59409)
+* 7.15: [역순 정렬하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59035), [단어 변환[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/43163)
+* 7.16: [피로도[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/87946), [프렌즈 4블록[LEVEL2]](https://school.programmers.co.kr/learn/courses/30/lessons/17679)
+* 7.17: [이름이 있는 동물의 아이디[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59407), [오랜 기간 보호한 동물[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/59044)
+* 7.18: [2개 이하로 다른 비트[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/77885), [삼각 달팽이[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/68645)
+* 7.19: [2개 뽑아서 더하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/68644), [헤비 유저가 소유한 장소[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/77487)
 </details>
 <details>
 <summary>8주차</summary>  
 
-    * 7.20: [영어 끝말잇기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12981), [주식가격[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42584)
-    * 7.21: [아픈 동물 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59036), [합승 택시 요금[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/72413)
-    * 7.22: [구명보트[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42885), [중복 제거하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59408)
-    * 7.23: [2016년 [LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12901), [경주로 건설[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/67259)
-    * 7.24: [교점에 별 만들기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/87377), [전력망을 둘로 나누기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
-    * 7.25: [어린 동물 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59037), [보행자 천국[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/1832)
-    * 7.26: [모음 사전[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/84512), [캐시[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/17680)
+* 7.20: [영어 끝말잇기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12981), [주식가격[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42584)
+* 7.21: [아픈 동물 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59036), [합승 택시 요금[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/72413)
+* 7.22: [구명보트[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/42885), [중복 제거하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59408)
+* 7.23: [2016년 [LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12901), [경주로 건설[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/67259)
+* 7.24: [교점에 별 만들기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/87377), [전력망을 둘로 나누기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
+* 7.25: [어린 동물 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59037), [보행자 천국[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/1832)
+* 7.26: [모음 사전[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/84512), [캐시[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/17680)
 </details>
 <details>
 <summary>9주차</summary>  
 
-    * 7.27: [최소 직사각형[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/86491), [몸짱 트레이너 라이언의 고민[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/1838)
-    * 7.28: [이진 변환 반복하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/70129), [점프와 순간 이동[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12980)
-    * 7.29: [나머지가 1이 되는 수 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/87389), [베스트 앨범[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
-    * 7.30: [3xn 타일링[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12902), [DATETIME에서 DATE로 형 변환[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59414)
-    * 7.31: [동물의 아이디와 이름[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59403), [아이템 줍기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/87694)
-    * 8.1: [n^2배열 자르기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/87390), [쿼드압축 후 개수 세기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/68936)
-    * 8.2: [부족한 금액 계산하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/82612), [여행경로[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/43164)
+* 7.27: [최소 직사각형[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/86491), [몸짱 트레이너 라이언의 고민[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/1838)
+* 7.28: [이진 변환 반복하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/70129), [점프와 순간 이동[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12980)
+* 7.29: [나머지가 1이 되는 수 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/87389), [베스트 앨범[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
+* 7.30: [3xn 타일링[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12902), [DATETIME에서 DATE로 형 변환[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/59414)
+* 7.31: [동물의 아이디와 이름[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59403), [아이템 줍기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/87694)
+* 8.1: [n^2배열 자르기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/87390), [쿼드압축 후 개수 세기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/68936)
+* 8.2: [부족한 금액 계산하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/82612), [여행경로[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/43164)
 </details>
 <details>
 <summary>10주차</summary>  
  
-    * 8.3: [스킬트리[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/49993), [방문 길이[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/49994)
-    * 8.4: 비밀 지도[LEVEL 1], 오랜기간 보호한 동물(2)[LEVEL 3]
-    * 8.5: 방금그곡[LEVEL 2], 가장 큰 정사각형 찾기[LEVEL 2]
-    * 8.6: [가운데 글자 가져오기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12903), [퍼즐 조각 채우기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/84021)
-    * 8.7: [압축[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/17684), [파일명 정렬[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/17686)
-    * 8.8: [여러 기준으로 정렬하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59404), [광고 삽입[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/72414)
-    * 8.9: [올바른 괄호[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12909), [n진수 게임[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/17687)
+* 8.3: [스킬트리[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/49993), [방문 길이[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/49994)
+* 8.4: 비밀 지도[LEVEL 1], 오랜기간 보호한 동물(2)[LEVEL 3]
+* 8.5: 방금그곡[LEVEL 2], 가장 큰 정사각형 찾기[LEVEL 2]
+* 8.6: [가운데 글자 가져오기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12903), [퍼즐 조각 채우기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/84021)
+* 8.7: [압축[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/17684), [파일명 정렬[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/17686)
+* 8.8: [여러 기준으로 정렬하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59404), [광고 삽입[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/72414)
+* 8.9: [올바른 괄호[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12909), [n진수 게임[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/17687)
 </details>
 <details>
 <summary>11주차</summary>  
 
-    * 8.10: [다트 게임[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/17682), [기둥과 보 설치[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/60061)
-    * **8.11 ~ 9.5일까지 보충할 부분 보충하고 부족한 개념 정리.**.
-    * 9.6: [다음 큰 숫자[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12911), [땅 따먹기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12913)
-    * 9.7: [상위 n개 레코드[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59405), [공 이동 시뮬레이션[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/87391)
-    * 9.8: [N개의 최소공배수[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12953), [N-Queen[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12952)
-    * **9.9 ~ 9.12 (추석 휴무)**
+* 8.10: [다트 게임[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/17682), [기둥과 보 설치[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/60061)
+> **8.11 ~ 9.5일까지 보충할 부분 보충하고 부족한 개념 정리.**.  
+* 9.6: [다음 큰 숫자[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12911), [땅 따먹기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12913)
+* 9.7: [상위 n개 레코드[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/59405), [공 이동 시뮬레이션[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/87391)
+* 9.8: [N개의 최소공배수[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12953), [N-Queen[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12952)
+> **9.9 ~ 9.12 (추석 휴무)**  
 </details>
 <details>
 <summary>12주차</summary>  
 
-    * 9.13: [x만큼 간격이 있는 n개의 숫자[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12954). [모두 0으로 만들기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/76503)
-    * 9.14: [JadenCase 문자열 만들기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12951), [행렬의 곱셈[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12949)
-    * 9.15: [행렬의 덧셈[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12950), [110 옮기기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/77886)
-    * 9.16: [멀리 뛰기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12914), [튜플[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/64065)
+* 9.13: [x만큼 간격이 있는 n개의 숫자[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12954). [모두 0으로 만들기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/76503)
+* 9.14: [JadenCase 문자열 만들기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12951), [행렬의 곱셈[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12949)
+* 9.15: [행렬의 덧셈[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12950), [110 옮기기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/77886)
+* 9.16: [멀리 뛰기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12914), [튜플[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/64065)
 </details>
     
