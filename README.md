@@ -2,7 +2,7 @@
 
 <div align="center">  
  
- __*꾸준히 하는 것이 힘이다 (Keep Going)*__  
+ __*:muscle:꾸준히 하는 것이 힘이다 (Keep Going)*__  
 
 |김동욱|채기중|
 |:-:|:-:|
