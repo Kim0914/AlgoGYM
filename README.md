@@ -1,6 +1,6 @@
 # 알고리즘 GYM에 오신 것을 환영합니다
 
-**꾸준히 하는 것이 힘이다 (Keep Going)**
+> __*꾸준히 하는 것이 힘이다 (Keep Going)*__  
 
 **트레이너: Dong Uk Kim, Ki Jung Chae**
 > **회원모집 문의**: kosa0914@gmail.com, daiywlf5251@gmail.com
