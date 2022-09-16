@@ -1,4 +1,4 @@
-# <center> 알고리즘 GYM에 오신 것을 환영합니다 </center>
+# <p align="center> 알고리즘 GYM에 오신 것을 환영합니다 </p>  
 
 <div align="center">  
  
