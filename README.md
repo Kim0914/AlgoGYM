@@ -10,7 +10,9 @@
 |Trainor|Trainor|
 |  <a href = "https://jinseop-sim.github.io/">
    <img src="https://img.shields.io/badge/GitBlog-181717?style=flat&logo=GitHub&logoColor=white&link=https://jinseop-sim.github.io/">
-   </a>|[Github](https://github.com/NamWoo77)|
+   </a>|  <a href = "https://jinseop-sim.github.io/">
+   <img src="https://img.shields.io/badge/GitBlog-181717?style=flat&logo=GitHub&logoColor=white&link=https://jinseop-sim.github.io/">
+   </a>|
 |kosa0914@gmail.com|daiywlf5251@gmail.com|
 </div>
 
