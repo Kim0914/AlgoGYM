@@ -1,16 +1,15 @@
+#include <iostream>
 #include <string>
 #include <vector>
 using namespace std;
-
+#define BIGINT 10000000
 long long get_divisor(long long num) {
-    long long key = num / 2;
-
-    while (true) {
-        if ((num % key) == 0)
-            return key;
-
-        key--;
+    for (long long i = 2; i <= sqrt(num); i++) {
+        if (num % i == 0 && (num / i) <= BIGINT)
+            return (num / i);
     }
+
+    return 1;
 }
 
 void pave_road(vector<int>& answer, long long begin, long long end) {
