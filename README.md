@@ -296,5 +296,5 @@ ___
 * 9.16: [멀리 뛰기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12914), [튜플[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/64065)
 * 9.17: [핸드폰 번호 가리기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12948), [거스름돈[LEVEL3]](https://school.programmers.co.kr/learn/courses/30/lessons/12907)
 * 9.18: [숫자 블록[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12923), [k진수에서 소수 개수 구하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/92335)
-* 9.19: [콜라츠 추측[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12943), [미정[LEVEL 3]]()
+* 9.19: [콜라츠 추측[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12943), [디스크 컨트롤러[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42627)
 </details>
