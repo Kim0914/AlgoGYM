@@ -7,8 +7,8 @@
 |김동욱|채기중|심진섭|이준희
 |:-:|:-:|:-:|:-:|
 |<img src="https://user-images.githubusercontent.com/71700079/190619406-503a09ff-d4a9-4837-bae2-5c78c17ed60a.jpg" width="100" height="100">|<img src="https://user-images.githubusercontent.com/71700079/190619439-ebaed8d0-a1df-4a9c-88b5-89eeaeb6eba8.jpg" width="100" height="100">|<img src="https://user-images.githubusercontent.com/71700079/191011608-e9bf54ca-5ee2-4161-b1bf-9869fe63338f.png" width="100" height="100">|<img src="https://user-images.githubusercontent.com/71700079/191011655-729222fc-a7e4-4bef-bc27-e461514dedc3.png" width="100" height="100">
-|Trainor|Trainor|Member|Member|
-|kosa0914@gmail.com  |daiywlf5251@gmail.com|-|-|
+|Member|Member|Member|Member|
+|kosa0914@gmail.com|daiywlf5251@gmail.com|xxxxxx@gmail.com|xxxxxxx@gmail.com|
 </div>
 
 * * *
