@@ -299,3 +299,9 @@ ___
 * 9.19: [콜라츠 추측[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12943), [디스크 컨트롤러[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42627)
 * 9.20 : [하노이의 탑[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12946), [수식 최대화[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/67257)
 </details>
+
+<details>
+<summary>13주차</summary>  
+
+* 9.21: [하샤드 수[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12947), [풍선 터트리기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/68646)
+</details>
