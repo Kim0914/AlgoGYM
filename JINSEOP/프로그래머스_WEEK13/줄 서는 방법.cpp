@@ -24,7 +24,7 @@ void calculate_permutation(int n, long long k, vector<int>& answer) {
     while (permutation.size() > 1) {
         factor /= n; // (n! / n) 하면 몇 칸으로 나눠지는지 나옴. 우리는 계속 이 값을 이용할 것이다.
         modular = k % factor; // 4! => 3! => 2! => 1! 으로 넘어갈 때 마다 k값이 바뀌어야 하는데, 그 Position을 정해준다.
-        divisor = k / factor; // k가 몇 번째 칸에 위치하는지, 그리고 해당 값을 빼낼 idx의 역할을 한다. 
+        divisor = k / factor; // k가 몇 번째 칸에 위치하는지? 해당 값을 가져올 idx의 역할을 한다. 
 
         answer.push_back(permutation[divisor]);
         permutation.erase(permutation.begin() + divisor);
