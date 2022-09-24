@@ -306,4 +306,5 @@ ___
 * 9.21: [하샤드 수[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12947), [풍선 터트리기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/68646)
 * 9.22: [최댓값과 최솟값[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12939), [줄 서는 방법[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/12936)
 * 9.23: [평균 구하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12944), [징검다리 건너기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/64062)
+* 9.24: **카카오 코딩테스트**
 </details>
