@@ -54,7 +54,7 @@ void dfs(int idx, int remainder, vector<int>& ryan, vector<int> apeach) {
     }
     
     dfs(idx + 1, remainder, ryan, apeach);
-    /* 해당 점수에 쏜 화살보다 많이 남지 않았거나 같은 경우엔 쏠 필요 X(낭비)
+    /* 해당 점수에 쏜 화살보다 많이 남지 않았거나 같은 경우엔 쏠 필요 X!(낭비)
        그냥 다음 Index로 넘어간다. */
 }
 
