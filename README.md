@@ -308,4 +308,5 @@ ___
 * 9.23: [평균 구하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12944), [징검다리 건너기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/64062)
 * 9.24: **카카오 코딩테스트**
 * 9.25: [양궁대회[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/92342), [두 큐 합 같게 만들기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/118667)
+* 9.26: [최대공약수와 최소공배수[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12940), [최고의 집합[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/12938)
 </details>
