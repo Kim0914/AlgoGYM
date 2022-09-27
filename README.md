@@ -309,4 +309,5 @@ ___
 * 9.24: **카카오 코딩테스트**
 * 9.25: [양궁대회[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/92342), [두 큐 합 같게 만들기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/118667)
 * 9.26: [최대공약수와 최소공배수[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12940), [최고의 집합[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/12938)
+* 9.27: [짝수와 홀수[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12937), [단속 카메라[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42884)
 </details>
