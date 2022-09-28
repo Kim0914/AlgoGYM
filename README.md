@@ -311,3 +311,11 @@ ___
 * 9.26: [최대공약수와 최소공배수[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12940), [최고의 집합[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/12938)
 * 9.27: [짝수와 홀수[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12937), [단속 카메라[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42884)
 </details>
+
+
+<details>
+<summary>14주차</summary> 
+
+* 9.28: [제일 작은 수 제거[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12935), [정수 제곱근 판별[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12934), [기지국 설치[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/12979)
+
+</details>
