@@ -317,5 +317,5 @@ ___
 <summary>14주차</summary> 
 
 * 9.28: [제일 작은 수 제거[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12935), [정수 제곱근 판별[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12934), [기지국 설치[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/12979)
-
+* 9.29: [문자열 내 p와 y의 개수[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12916), [없는 숫자 더하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/86051), [문제 선정 부탁드립니다[LEVEL 3]]()
 </details>
