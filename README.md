@@ -320,5 +320,5 @@ ___
 * 9.29: [문자열 내 p와 y의 개수[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12916), [없는 숫자 더하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/86051), [가장 긴 팰린드롬[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/12904)
 * 9.30: [정수 내림차순으로 배치하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12933), [자연수 뒤집어 배열로 만들기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12932), [야근 지수[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/12927)
 * 10.1 : [서울에서 김서방 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12919), [음양 더하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/76501), [숫자 게임[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/12987)
-* 10.2 : [수박수박수?[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12922), [시저 암호[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12926), [문제 ㄱ 부탁드립니다.[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42892)
+* 10.2 : [수박수박수?[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12922), [시저 암호[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12926), [길 찾기 게임[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/42892)
 </details>
