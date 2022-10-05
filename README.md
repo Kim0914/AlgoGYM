@@ -328,5 +328,5 @@ ___
 <details>
 <summary>15주차</summary>
 
-* 10.5 : [나누어 떨어지는 숫자 배열[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12910), [소수 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12921), [아아.. 선정해주세요..[LEVEL 3]]()
+* 10.5 : [나누어 떨어지는 숫자 배열[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12910), [소수 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12921), [코딩테스트 공부[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/118668)
 </details>
