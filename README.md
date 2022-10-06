@@ -329,5 +329,5 @@ ___
 <summary>15주차</summary>
 
 * 10.5 : [나누어 떨어지는 숫자 배열[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12910), [소수 찾기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12921), [코딩테스트 공부[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/118668)
-* 10.6 : [두 정수 사이의 합[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12912), [소수 만들기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12977), [[LEVEL 3]]()
+* 10.6 : [두 정수 사이의 합[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12912), [소수 만들기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12977), [외벽 점검LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/60062)
 </details>
