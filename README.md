@@ -332,4 +332,5 @@ ___
 * 10.6 : [두 정수 사이의 합[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12912), [소수 만들기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12977), [외벽 점검[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/60062)
 * 10.7 : [강원도에 위치한 생산공장 목록 출력하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/131112), [문자열 다루기 기본[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12918), [조건별로 분류하여 주문상태 출력하기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/131113)
 * 10.8: [숫자 짝궁[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/131128), [경기도에 위치한 식품창고 목록 출력하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/131114), [즐겨찾기가 가장 많은 식당정보 출력하기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/131123)
+* 10.9: [약수의 합[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/12928), [내적[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/70128), [아직 안뽑았습니다.[LEVEL 3]]()
 </details>
