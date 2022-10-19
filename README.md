@@ -336,6 +336,7 @@ ___
 * **10.10 ~ 10.21 중간고사 일정으로 인해 잠시 쉬어갑니다 !**
 </details>
 
+<details>
 <summary>16주차</summary>
 
 * 10.22: [택배 상자[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/131704), [연속 부분 수열 합의 개수[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/131701)
