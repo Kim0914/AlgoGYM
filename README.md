@@ -341,4 +341,5 @@ ___
 <summary>16주차</summary>
 
 * 10.22: [택배 상자[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/131704), [연속 부분 수열 합의 개수[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/131701)
+* 10.23: [나이 정보가 없는 회원 수 구하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/131528), [부대복귀[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/132266)
 </details>
