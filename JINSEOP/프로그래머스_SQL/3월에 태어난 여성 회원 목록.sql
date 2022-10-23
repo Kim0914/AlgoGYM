@@ -1,0 +1,10 @@
+SELECT MEMBER_ID, MEMBER_NAME, GENDER, DATE_FORMAT(DATE_OF_BIRTH, "%Y-%m-%d")
+FROM MEMBER_PROFILE
+WHERE GENDER = "W" AND MONTH(DATE_OF_BIRTH) = 3 AND TLNO IS NOT NULL
+ORDER BY MEMBER_ID ASC
+
+// DATE_FORMAT에서 주의할 점!
+// %Y, %y 대소문자에 따라 결과가 다르게 나온다.
+// %Y : 1992 %y : 92
+// %M : March %m : 03
+// %D : 16th %d : 16
