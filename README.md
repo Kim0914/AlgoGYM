@@ -345,3 +345,10 @@ ___
 * 10.24: [롤케이크 자르기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/132265), [진료과별 총 예약 횟수 출력하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/132202)
 * 10.25: [삼총사[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/131705), [2차원 동전 뒤집기[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/131703)
 </details>
+
+<details>
+<summary>17주차</summary>
+
+* 10.26: [재구매가 일어난 상품과 회원 리스트[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/131536), [상품 별 오프라인 매출 구하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/131533)
+
+</details>
