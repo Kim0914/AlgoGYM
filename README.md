@@ -350,5 +350,6 @@ ___
 <summary>17주차</summary>
 
 * 10.26: [재구매가 일어난 상품과 회원 리스트[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/131536), [상품 별 오프라인 매출 구하기[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/131533)
+* 10.27: [흉부외과 또는 일반외과 의사 목록 출력하기[LEVEL 1]](https://school.programmers.co.kr/learn/courses/30/lessons/132203), [카운트 다운[LEVEL 3]](https://school.programmers.co.kr/learn/courses/30/lessons/131129)
 
 </details>
