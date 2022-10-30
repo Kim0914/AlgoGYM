@@ -1,7 +1,7 @@
 #include <string>
 #include <vector>
 using namespace std;
-#define INF 100000000
+#define INF 1000000000
 
 int DP[151][151];
 int max_alp = 0, max_cop = 0;
