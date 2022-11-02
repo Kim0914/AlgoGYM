@@ -354,4 +354,9 @@ ___
 * 10.28 ~ 30: 정보컴퓨터공학부 학술제로 인해 쉬어갑니다 !
 * 10.31: [혼자 놀기의 달인[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/131130), [성분으로 구분한 아이스크림 총 주문량[LEVEL 2]](https://school.programmers.co.kr/learn/courses/30/lessons/133026)
 
+ **10.31 부로 프로그래머스 스터디를 마칩니다.** 
+   
+ **LEVEL 1 문제가 새로 많이 올라왔지만, 난이도가 낮아 개인적으로 풀어보면 될 것 같습니다!**
+   
+ **고생많았습니당 ^.^**
 </details>
