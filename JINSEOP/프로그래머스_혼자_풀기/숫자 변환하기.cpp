@@ -1,33 +1,34 @@
 #include <string>
 #include <vector>
-#include <iostream>
 using namespace std;
 #define BIGINT 9999999
 
-int res = BIGINT;
-void recur(int x, int y, int n, int depth) {
-    if (x == y) {
-        if (res > depth)
-            res = depth;
+int DP[1000001];
+void fill_DP(int x, int y, int n) {
+    for (int i = x + 1; i < y + 1; i++) {
+        int key_a = BIGINT, key_b = BIGINT, key_c = BIGINT, kind = 0;
 
-        return;
+        if ((i % 2 == 0) && (i / 2 >= x))
+            key_a = DP[i / 2];
+        if ((i % 3 == 0) && (i / 3 >= x))
+            key_b = DP[i / 3];
+        if ((i - n) >= x)
+            key_c = DP[i - n];
+
+        kind = min(min(key_a, key_b), key_c);
+
+        if (kind == BIGINT)
+            DP[i] = BIGINT;
+        else
+            DP[i] = kind + 1;
     }
-    
-    if (x > y) return;
-
-    recur(x + n, y, n, depth + 1);
-    recur(x * 2, y, n, depth + 1);
-    recur(x * 3, y, n, depth + 1);
 }
 
 int solution(int x, int y, int n) {
-    int answer = 0;
-    recur(x, y, n, 0);
+    fill_DP(x, y, n);
 
-    if (res == BIGINT)
-        answer = -1;
+    if (DP[y] == BIGINT)
+        return -1;
     else
-        answer = res;
-
-    return answer;
+        return DP[y];
 }
