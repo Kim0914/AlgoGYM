@@ -1,25 +1,29 @@
 #include <string>
 #include <vector>
-
+#include <queue>
 using namespace std;
 
+priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> sorter;
 vector<int> solution(vector<int> numbers) {
-    vector<int> answer;
-    
-    for(int i = 0; i < numbers.size(); i++){
-        bool flag = false;
-        
-        for(int j = i+1; j < numbers.size(); j++){
-            if(numbers[i] < numbers[j]){
-                answer.push_back(numbers[j]);
-                flag = true;
+    vector<int> answer(numbers.size(), -1);
+
+    for (int i = 0; i < numbers.size(); i++) {
+        while (!sorter.empty()) {
+            if (sorter.top().first >= numbers[i])
                 break;
-            }
+
+            answer[sorter.top().second] = numbers[i];
+            sorter.pop();
         }
-        
-        if(!flag)
-            answer.push_back(-1);
+
+        sorter.push({ numbers[i], i });
     }
-    
+
     return answer;
+}
+
+int main() {
+    vector<int> numbers = {9, 1, 5, 3, 6, 2};
+    solution(numbers);
+    return 0;
 }
