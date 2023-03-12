@@ -27,3 +27,5 @@ int main() {
     solution(numbers);
     return 0;
 }
+
+// Stack을 이용하면 더 빨리 풀립니다.
