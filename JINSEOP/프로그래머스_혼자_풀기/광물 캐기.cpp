@@ -1,11 +1,13 @@
 #include <string>
 #include <vector>
-#include <iostream>
 #include <queue>
 using namespace std;
 
 struct cmp {
     bool operator()(pair<vector<string>, int> &a, pair<vector<string>, int> &b) {
+        if (a.second == b.second)
+            return a.first.size() > b.first.size();
+
         return a.second < b.second;
     }
 };
@@ -32,12 +34,10 @@ void fill_queue(vector<int> picks, vector<string> minerals) {
 
 void calculate_fatigue(vector<int> &picks, int &answer) {
     while (!mineral_q.empty()) {
-        for (auto i : mineral_q.top().first)
-            cout << i << " ";
-        cout << mineral_q.top().second << endl;
-
         if (picks[0] != 0) {
-            answer += 5;
+            for (int i = 0; i < mineral_q.top().first.size(); i++)
+                answer += 1;
+
             picks[0] -= 1;
         }
         else if (picks[1] != 0) {
@@ -74,11 +74,4 @@ int solution(vector<int> picks, vector<string> minerals) {
     calculate_fatigue(picks, answer);
     
     return answer;
-}
-
-int main() {
-    vector<int> picks = { 0, 0, 1 };
-    vector<string> minerals = { "iron" };
-    cout << solution(picks, minerals);
-    return 0;
 }
