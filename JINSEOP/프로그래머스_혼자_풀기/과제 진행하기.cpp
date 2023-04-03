@@ -3,6 +3,7 @@
 #include <stack>
 #include <tuple>
 #include <algorithm>
+#include <iostream>
 using namespace std;
 
 stack<tuple<string, int, int>> assignments;
@@ -21,28 +22,28 @@ void do_assignments(vector<vector<string>> &plans, vector<string> &answer) {
             string prev_plan = get<0>(assignments.top());
             int prev_start_time = get<1>(assignments.top());
             int prev_worktime = get<2>(assignments.top()); // 둘을 더하면 종료시간
-            int rest_time = start_time - prev_start_time;
+            int progressable_time = start_time - prev_start_time;
             assignments.pop();
 
-            if (rest_time < prev_worktime)
-                assignments.push(make_tuple(prev_plan, prev_start_time, prev_worktime - rest_time));
+            if (progressable_time < prev_worktime)
+                assignments.push(make_tuple(prev_plan, prev_start_time, prev_worktime - progressable_time));
             else {
                 answer.push_back(prev_plan);
-                rest_time -= prev_worktime;
+                progressable_time -= prev_worktime;
 
-                while (!assignments.empty() && rest_time > 0) {
-                    prev_plan = get<0>(assignments.top());
+                while (!assignments.empty() && progressable_time > 0) { // 진행 가능한 시간이 남으면
+                    prev_plan = get<0>(assignments.top());             // Stack에 남아있는 일 처리
                     prev_start_time = get<1>(assignments.top());
                     prev_worktime = get<2>(assignments.top());
                     assignments.pop();
 
-                    if (rest_time < prev_worktime) {
-                        assignments.push(make_tuple(prev_plan, prev_start_time, prev_worktime - rest_time));
-                        break;
+                    if (progressable_time < prev_worktime) { // 진행 가능한 시간 안에 처리하지 못하는 일
+                        assignments.push(make_tuple(prev_plan, prev_start_time, prev_worktime - progressable_time));
+                        break; // Work time에서 진행 가능한 시간만 빼고 Stack의 top에 다시 투입
                     }
-                    else {
+                    else { // 진행 가능한 시간 안에 모두 처리된 일
                         answer.push_back(prev_plan);
-                        rest_time -= prev_worktime;
+                        progressable_time -= prev_worktime;
                     }
                 }
             }
