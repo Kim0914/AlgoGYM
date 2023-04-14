@@ -1,46 +1,41 @@
 #include <string>
 #include <vector>
 #include <stack>
-#include <iostream>
 using namespace std;
 
 stack<int> hamburger;
-vector<int> manual = {1, 2, 3, 1};
-int solution(vector<int> ingredient) {
-    int answer = 0, iter = 0, man_ptr = 0;
-    // 기본 순서는 1 2 3 1
+string manual = "1321"; // Stack이니까 반대로 봐야함
+void validate(int &answer) {
+    string test = "";
+    stack<int> temp_stack;
 
-    while(true) {
-        if (man_ptr == 1 && hamburger.top() == 1)
-            man_ptr = 0;
+    for (int i = 0; i < 4; i++) {
+        test += (hamburger.top() + '0');
+        temp_stack.push(hamburger.top());
+        hamburger.pop();
+    }
 
-        if (!hamburger.empty() && (hamburger.top() == manual[man_ptr])) {
-            man_ptr++;
-
-            if (man_ptr == manual.size()) {
-                for (int i = 0; i < 4; i++)
-                    hamburger.pop();
-
-                man_ptr = 0;
-                answer++;
-                continue;
-            }
+    if (test == manual)
+        answer++;
+    else {
+        for (int i = 0; i < 4; i++) {
+            hamburger.push(temp_stack.top());
+            temp_stack.pop();
         }
-        else
-            man_ptr = 0;
+    }
+}
 
-        if (iter >= ingredient.size())
-            break;
+int solution(vector<int> ingredient) {
+    int answer = 0;
 
-        hamburger.push(ingredient[iter]);
-        iter++;
+    for (int i = 0; i < ingredient.size(); i++) {
+        hamburger.push(ingredient[i]);
+
+        if (hamburger.size() >= 4 && hamburger.top() == 1)
+            validate(answer);
     }
 
     return answer;
 }
 
-int main() {
-    vector<int> ingredient = { 2, 1, 1, 2, 3, 1, 2, 3, 1 };
-    cout << solution(ingredient);
-    return 0;
-}
+// 4개마다 그냥 다 빼서 확인하고 도로 집어넣기.
