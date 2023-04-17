@@ -6,7 +6,7 @@ void get_divisors(vector<int> &divisors) {
     for (int i = 1; i < divisors.size(); i++) {
         for (int j = i; j < divisors.size(); j += i)
             divisors[j]++;
-    } // 억억단 그대로 적용
+    }
 }
 
 void calculate_weight(int number, int limit, int power, int &answer, vector<int> divisors) {
