@@ -1,7 +1,6 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
-#include <iostream>
 using namespace std;
 
 unordered_map<string, pair<int, string>> babbling_map;
@@ -26,10 +25,9 @@ int solution(vector<string> babbling) {
 
             if (babbling_map[partial_bab].first != 0) {
                 len += babbling_map[partial_bab].first;
-                partial_bab = "";
                 validator += babbling_map[partial_bab].second;
+                partial_bab = "";
 
-                cout << validator << endl;
                 if (validator.size() > 1) {
                     if (validator[validator.size() - 2] == validator[validator.size() - 1]) {
                         len = 0;
@@ -44,10 +42,4 @@ int solution(vector<string> babbling) {
     }
 
     return answer;
-}
-
-int main() {
-    vector<string> babbling = { "ayaye", "uuu", "yeye", "yemawoo", "ayaayaa" };
-    cout << solution(babbling);
-    return 0;
 }
