@@ -43,3 +43,5 @@ int solution(vector<string> babbling) {
 
     return answer;
 }
+
+// 정석 풀이는 뭘까?
