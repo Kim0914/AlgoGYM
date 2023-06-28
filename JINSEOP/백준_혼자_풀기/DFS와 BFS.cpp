@@ -58,3 +58,6 @@ int main() {
     bfs(graph, b_visit, start);
     return 0;
 }
+
+// 인접리스트로 구현하는 것 보다 인접 행렬이 더 빠르다.
+// 왜? DFS 수행 시 정렬을 하지 않아도 되기 때문
