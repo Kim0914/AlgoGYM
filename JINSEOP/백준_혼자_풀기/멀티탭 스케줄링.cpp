@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
-#include <queue>
 using namespace std;
 
 unordered_map<int, int> appliance_map;
@@ -9,8 +8,7 @@ unordered_map<int, int> prior_map;
 vector<int> appliance_v;
 vector<int> socket;
 int main() {
-    int hole = 0, freq = 0, used = 0;
-    int latest_idx = 0, latest = 0, cnt = 0;
+    int hole = 0, freq = 0, used = 0, cnt = 0;
 
     cin >> hole >> freq;
     for (int i = 0; i < freq; i++) {
@@ -21,6 +19,9 @@ int main() {
     }
 
     for (int i = 0; i < appliance_v.size(); i++) {
+        bool isLast = true;
+        int latest_idx = 0, latest = 0;
+
         if (socket.size() < hole) { // 빈 자리가 있을 때
             if (appliance_map[appliance_v[i]] == 0) { // 사용 중이 아닌 기구라면?
                 socket.push_back(appliance_v[i]); // 투입
@@ -28,18 +29,26 @@ int main() {
 
                 for (int j = i + 1; j < appliance_v.size(); j++) { // 추후 등장할 인덱스 갱신
                     if (appliance_v[i] == appliance_v[j]) {
+                        isLast = false;
                         prior_map[appliance_v[i]] = j + 1;
                         break;
                     }
                 }
+
+                if (isLast)
+                    prior_map[appliance_v[i]] = 99999; // 이후 등장하지 않는 경우
             }
             else {
                 for (int j = i + 1; j < appliance_v.size(); j++) { // 추후 등장할 인덱스 갱신
                     if (appliance_v[i] == appliance_v[j]) {
+                        isLast = false;
                         prior_map[appliance_v[i]] = j + 1;
                         break;
                     }
                 }
+
+                if (isLast)
+                    prior_map[appliance_v[i]] = 99999; // 이후 등장하지 않는 경우
             } // 사용 중이라면 인덱스만 갱신
         }
         else { // 빈 자리가 없을 때
@@ -58,21 +67,27 @@ int main() {
 
                 for (int j = i + 1; j < appliance_v.size(); j++) { // 추후 등장할 인덱스 갱신
                     if (appliance_v[i] == appliance_v[j]) {
+                        isLast = false;
                         prior_map[appliance_v[i]] = j + 1;
                         break;
                     }
                 }
-                cnt++;
 
-                // 기구를 뽑았으니, count 증가
+                if (isLast)
+                    prior_map[appliance_v[i]] = 99999; // 이후 등장하지 않는 경우
+                cnt++; // 기구를 뽑았으니, count 증가
             }
             else {
                 for (int j = i + 1; j < appliance_v.size(); j++) { // 추후 등장할 인덱스 갱신
                     if (appliance_v[i] == appliance_v[j]) {
+                        isLast = false;
                         prior_map[appliance_v[i]] = j + 1;
                         break;
                     }
                 }
+
+                if (isLast)
+                    prior_map[appliance_v[i]] = 99999; // 이후 등장하지 않는 경우
             } // 사용 중이라면 인덱스만 갱신
         }
     }
