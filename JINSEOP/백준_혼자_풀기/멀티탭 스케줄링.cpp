@@ -27,8 +27,10 @@ int main() {
                 appliance_map[appliance_v[i]] = 1; // 사용 중 표시
 
                 for (int j = i + 1; j < appliance_v.size(); j++) { // 추후 등장할 인덱스 갱신
-                    if (appliance_v[i] == appliance_v[j])
+                    if (appliance_v[i] == appliance_v[j]) {
                         prior_map[appliance_v[i]] = j + 1;
+                        break;
+                    }
                 }
             }
             else {
@@ -48,6 +50,7 @@ int main() {
                         latest_idx = j;
                     }
                 } // 추후에 가장 늦게 등장할 기구 뽑아내면서, 빈 자리 표시
+
                 appliance_map[socket[latest_idx]] = 0;
                 socket[latest_idx] = appliance_v[i];
                 appliance_map[appliance_v[i]] = 1;
