@@ -23,8 +23,10 @@ void do_union(int node_x, int node_y) {
 	node_x = get_parent(node_x);
 	node_y = get_parent(node_y);
 
+	// 부모가 같은데 연결을 한다?
+	// 사이클이 생긴다는 것이므로 연결하지 않는다.
 	if (node_x == node_y)
-		return; // 사이클이 생겼다는 것이므로 연결하지 않는다.
+		return;
 	else {
 		if (node_x < node_y) parent[node_x] = node_y;
 		else parent[node_y] = node_x;
