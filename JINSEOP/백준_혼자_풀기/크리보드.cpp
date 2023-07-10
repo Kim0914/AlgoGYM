@@ -4,7 +4,7 @@ using namespace std;
 
 long long dp[101];
 void init_dp() {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i <= 5; i++)
 		dp[i] = i;
 }
 
@@ -13,26 +13,19 @@ int main() {
 	cin >> num;
 
 	init_dp();
-	for (int i = 4; i <= num; i++) {
-		if ((dp[i - 1] + 1) <= dp[i - 3] + dp[i - 3]) { // Ctrl-A Ctrl-C Ctrl-V를 한 것
-			if ((dp[i - 1] + buffer) > (dp[i - 3] + dp[i - 3])) { 
-				// dp[i-3]은 buffer가 될 예정
-				// 그냥 Ctrl V 하는 경우.
-				dp[i] = dp[i - 1] + buffer;
-				continue;
-			}
+	for (int i = 6; i <= num; i++) {
+		dp[i] = dp[i - 1] + 1; // A를 그냥 누르는 경우
+		for (int j = 1; j < 4; j++)
+			dp[i] = max(dp[i], dp[i - 2 - j] * (j + 1));
+		// A를 그냥 누르는 경우와의 비교 대상은 다음과 같다.
+		// 1. j = 1인 경우
+		// dp[i - 3] * 2, 즉 Ctrl A Ctrl C Ctrl V를 하는 경우
+		// 2. j = 2인 경우
+		// dp[i - 4] * 3, 즉 Ctrl A Ctrl C Ctrl V Ctrl V를 하는 경우
+		// 3. j = 3인 경우
+		// dp[i - 5] * 4, 즉 Ctrl A Ctrl C Ctrl V Ctrl V Ctrl V를 하는 경우
 
-			buffer = dp[i - 3]; // 이게 제일 큰 경우 buffer를 2배로
-			dp[i] = dp[i - 3] + buffer;
-		}
-		else {
-			if ((dp[i - 1] + buffer) > (dp[i - 1] + 1)) {
-				dp[i] = dp[i - 1] + buffer;
-				continue;
-			}
-
-			dp[i] = dp[i - 1] + 1; // 그냥 A를 입력하는 경우
-		}
+		// 위의 경우 이상의 경우는 다시 복붙하는게 무조건 더 크다!
 	}
 
 	cout << dp[num];
