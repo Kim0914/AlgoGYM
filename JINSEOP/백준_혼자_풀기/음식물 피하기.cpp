@@ -10,6 +10,7 @@ int row = 0, col = 0, cnt = 0, max_cnt = 0;
 void bfs(int x, int y, vector<vector<bool>> food_map, vector<vector<bool>> &visit) {
 	bfs_q.push({ x, y });
 	visit[x][y] = true;
+	cnt++;
 
 	while (!bfs_q.empty()) {
 		int curr_x = bfs_q.front().first;
@@ -20,7 +21,7 @@ void bfs(int x, int y, vector<vector<bool>> food_map, vector<vector<bool>> &visi
 			int nx = curr_x + dx[i];
 			int ny = curr_y + dy[i];
 
-			if ((nx >= 0 && nx <= row) && (ny >= 0 && ny <= col)) {
+			if ((nx >= 0 && nx < row) && (ny >= 0 && ny < col)) {
 				if (!visit[nx][ny] && food_map[nx][ny]) {
 					visit[nx][ny] = true;
 					bfs_q.push({ nx, ny });
@@ -48,11 +49,14 @@ int main() {
 			if (!visit[i][j] && food_map[i][j]) {
 				cnt = 0;
 				bfs(i, j, food_map, visit);
+
 				if (max_cnt < cnt)
 					max_cnt = cnt;
 			}
 		}
 	}
+
+	cout << max_cnt;
 
 	return 0;
 }
