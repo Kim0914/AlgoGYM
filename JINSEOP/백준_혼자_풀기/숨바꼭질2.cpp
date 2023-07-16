@@ -24,6 +24,7 @@ void bfs(int start, int goal) {
 		visit[curr] = true;
 
 		if (cnt != 0 && curr == goal && timer == min_time)
+			// 같은 시간이면 카운트 증가
 			cnt++;
 
 		if (cnt == 0 && curr == goal) {
@@ -33,10 +34,13 @@ void bfs(int start, int goal) {
 		}
 
 		if (validate(curr + 1) && !visit[curr + 1])
+			// X + 1칸으로 감
 			bfs_q.push({ curr + 1, timer + 1 });
 		if (validate(curr - 1) && !visit[curr - 1])
+			// X - 1칸으로 감
 			bfs_q.push({ curr - 1, timer + 1 });
 		if (validate(curr * 2) && !visit[curr * 2])
+			// X * 2칸으로 감
 			bfs_q.push({ curr * 2, timer + 1 });
 	}
 }
