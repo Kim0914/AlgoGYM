@@ -5,7 +5,7 @@ using namespace std;
 
 queue<pair<int, pair<int, int>>> bfs_q; // {클립보드, {길이, 시간}}
 bool visit[2001][2001]; // 방문체크를 해야 메모리 초과가 안남!!
-// 왜? 빼고 더하고 하다보면, 이미 들렀던 상황에 다시 갈 수 있음
+// 왜? 빼고 더하고 하다보면, 이미 들렀던 상황에 다시 가버릴 수가 있다! 이는 시간낭비
 void bfs(int limit) {
 	bfs_q.push({ 0, { 1, 0 } });
 	visit[1][0] = true; // 현재 이모티콘, 클립보드 방문
