@@ -32,5 +32,3 @@ int main() {
 
 	return 0;
 }
-
-![법러](https://github.com/Kim0914/AlgoGYM/assets/71700079/cea6f740-b4e5-4e10-88fb-611a660c1eea)  
