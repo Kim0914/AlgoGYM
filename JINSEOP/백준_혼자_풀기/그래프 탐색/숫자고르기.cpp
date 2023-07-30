@@ -3,50 +3,47 @@
 #include <set>
 using namespace std;
 
-int len = 0, num = 0, max_size = 0;
-vector<int> bottom_vec;
-string top_bit = "0";
-string bottom_bit = "0";
-string max_bit = "0";
-void print_bit() {
-	for (int i = 0; i < max_bit.size(); i++)
-		if (max_bit[i] == '1')
-			cout << i << '\n';
+int len = 0, max_size = 0;
+int bottom_arr[101];
+bool visit[101];
+int result_arr[101];
+void clear_visit() {
+	for (int i = 0; i <= len; i++)
+		visit[i] = false;
 }
 
-void backtrack(int depth, int idx, vector<bool> &visit) {
-	if (top_bit == bottom_bit && depth != 0) {
-		if (depth > max_size) {
-			max_size = depth;
-			max_bit = top_bit;
+void dfs(int st, int curr) {
+	// 핵심은 같은 집합을 만들 수 있다면, 사이클이 생긴다는 것!
+	if (visit[curr]) { // 갔던 곳으로 돌아왔다.
+		if (curr == st) { // 근데 시작점이랑 같네? 사이클!
+			result_arr[max_size] = st;
+			max_size += 1;
 		}
 	}
-
-	for (int i = idx; i < len; i++) {
-		if (!visit[i]) {
-			top_bit[i + 1] = '1'; bottom_bit[bottom_vec[i]] = '1';
-			visit[i] = true;
-			backtrack(depth + 1, i, visit);
-			top_bit[i + 1] = '0'; bottom_bit[bottom_vec[i]] = '0';
-			visit[i] = false;
-		}
+	else {// 아니면, 계속 진행
+		visit[curr] = true;
+		dfs(st, bottom_arr[curr]);
 	}
+	
 }
 
 int main() {
 	cin >> len;
-	vector<bool> visit(len, false);
-
-	for (int i = 0; i < len; i++) {
-		cin >> num;
-		bottom_vec.push_back(num); // 아래 집합 저장
-		top_bit += "0"; bottom_bit += "0"; max_bit += "0";
-		// 비트마스킹 용 비트 생성
+	for (int i = 1; i <= len; i++) {
+		cin >> bottom_arr[i]; // 아래 집합 저장
 	}
 
-	backtrack(0, 0, visit);
+	for (int i = 1; i <= len; i++) {
+		clear_visit();
+		dfs(i, i);
+	}
+
+	// 사이클이 돌았다는 것은, 같은 집합이라는 것
 	cout << max_size << '\n';
-	print_bit();
+	for (int i = 0; i < max_size; i++)
+		cout << result_arr[i] << "\n";
 
 	return 0;
 }
+
+// 백트래킹 시도, 실패
