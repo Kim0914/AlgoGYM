@@ -7,8 +7,8 @@ int story = 0, row = 0, col = 0;
 int dx[6] = {1, -1, 0, 0, 0, 0 };
 int dy[6] = {0, 0, -1, 0, 1, 0};
 int dz[6] = {0, 0, 0, 1, 0, -1}; // 6방향
-char building_map[31][31][31];
-bool visit[31][31][31];
+char building_map[30][30][30];
+bool visit[30][30][30];
 
 void clear_visit() {
 	memset(visit, false, sizeof(visit));
@@ -24,10 +24,6 @@ int bfs(pair<pair<int, int>, pair<int, int>> start_pair) {
 		int curr_x = bfs_q.front().first.second; // z축
 		int curr_y = bfs_q.front().second.first; // y축
 		int curr_z = bfs_q.front().second.second; // x축
-
-		if (building_map[curr_x][curr_y][curr_z] == 'E')
-			return curr_time;
-
 		bfs_q.pop();
 
 		for (int i = 0; i < 6; i++) {
@@ -37,6 +33,9 @@ int bfs(pair<pair<int, int>, pair<int, int>> start_pair) {
 
 			if ((nx >= 0 && nx < story) && (ny >= 0 && ny < row) && (nz >= 0 && nz < col)) {
 				if (!visit[nx][ny][nz] && building_map[nx][ny][nz] != '#') {
+					if (building_map[nx][ny][nz] == 'E')
+						return curr_time + 1;
+
 					bfs_q.push({ {curr_time + 1 ,nx}, {ny, nz} });
 					visit[nx][ny][nz] = true;
 				}
@@ -48,10 +47,6 @@ int bfs(pair<pair<int, int>, pair<int, int>> start_pair) {
 }
 
 int main() {
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
-
 	while (true) {
 		int result = 0;
 		pair<pair<int, int>, pair<int, int>> start_pair;
@@ -73,9 +68,9 @@ int main() {
 
 		result = bfs(start_pair);
 		if (result == -1)
-			cout << "Trapped!";
+			cout << "Trapped!" << '\n';
 		else
-			cout << "Escaped in " << result << " minute(s).";
+			cout << "Escaped in " << result << " minute(s)." << "\n";
 	}
 
 	return 0;
