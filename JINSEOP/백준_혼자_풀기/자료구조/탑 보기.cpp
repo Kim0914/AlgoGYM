@@ -2,53 +2,54 @@
 #include <vector>
 #include <stack>
 using namespace std;
-#define MAX 99999999
 
 int num = 0, tower_list[100001];
-vector<pair<int, int>> tower_vec;
+pair<int, int> tower_vec[100001];
+stack<pair<int, int>> high_tower_left;
+stack<pair<int, int>> high_tower_right;
+void init_vec(){
+	for (int i = 0; i < num; i++) {
+		tower_vec[i] = { 0, 99999999 };
+	}
+}
+
 int main() {
 	cin >> num;
 	for (int i = 0; i < num; i++)
 		cin >> tower_list[i];
 
-	for (int i = 0; i < num; i++) {
-		stack<int> high_tower_left;
-		stack<int> high_tower_right;
-		pair<int, int> tower_unit;
+	init_vec();
 
-		int first_tower_left = MAX, first_tower_right = MAX;
-
-		for (int j = i - 1; j >= 0; j--) { // 현재 탑 기준 왼쪽
-			if (high_tower_left.empty()) {
-				if (tower_list[i] < tower_list[j]) {
-					high_tower_left.push(tower_list[j]); // 처음 만나는 높은 탑 삽입
-					first_tower_left = j + 1;
-				}
-			}
-			if (!high_tower_left.empty() && (tower_list[j] > high_tower_left.top()))
-				high_tower_left.push(tower_list[j]); // 이후 만나는 더 높은 탑 삽입
-		}
-		for (int j = i + 1; j < num; j++) { // 현재 탑 기준 오른쪽
-			if (high_tower_right.empty()) {
-				if (tower_list[i] < tower_list[j]) {
-					high_tower_right.push(tower_list[j]); // 처음 만나는 높은 탑 삽입
-					first_tower_right = j + 1;
-				}
-			}
-			if (!high_tower_right.empty() && (tower_list[j] > high_tower_right.top()))
-				high_tower_right.push(tower_list[j]); // 이후 만나는 더 높은 탑 삽입
+	for (int i = 0; i <= num; i++) {
+		while (!high_tower_left.empty() && (tower_list[i] >= high_tower_left.top().first))
+			high_tower_left.pop();
+		tower_vec[i].first += high_tower_left.size(); // 왼쪽에서 볼 수 있는 빌딩
+		
+		if (!high_tower_left.empty()) {
+			if (abs(i - high_tower_left.top().second) < abs(tower_vec[i].second - i))
+				tower_vec[i].second = high_tower_left.top().second;
 		}
 
-		tower_unit.first = high_tower_left.size() + high_tower_right.size();
-		tower_unit.second = min(first_tower_left, first_tower_right);
-
-		tower_vec.push_back(tower_unit);
+		high_tower_left.push({ tower_list[i], i + 1});
 	}
 
-	for (auto i : tower_vec) {
-		cout << i.first << " "; 
-		if (i.second != MAX)
-			cout << i.second << '\n';
+	for (int i = num - 1; i >= 0; i--) {
+		while (!high_tower_right.empty() && (tower_list[i] >= high_tower_right.top().first))
+			high_tower_right.pop();
+		tower_vec[i].first += high_tower_right.size(); // 오른쪽에서 볼 수 있는 빌딩
+
+		if (!high_tower_right.empty()) {
+			if (abs(i - high_tower_right.top().second) < abs(tower_vec[i].second - i))
+				tower_vec[i].second = high_tower_right.top().second;
+		}
+
+		high_tower_right.push({ tower_list[i], i + 1 });
+	}
+		
+	for (int i = 0; i < num; i++) {
+		cout << tower_vec[i].first << " ";
+		if (tower_vec[i].second != 99999999)
+			cout << tower_vec[i].second << '\n';
 		else
 			cout << '\n';
 	}
