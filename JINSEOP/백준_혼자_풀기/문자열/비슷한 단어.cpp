@@ -26,6 +26,13 @@ int main() {
 					max_first_idx = word_map[temp].second;
 					max_second_idx = i;
 				}
+
+				if (overlap_cnt == max_cnt) { // 동일할 때, 더 앞에 있는 것을 결과로
+					if (max_first_idx > word_map[temp].second) {
+						max_first_idx = word_map[temp].second;
+						max_second_idx = i;
+					}
+				}
 			}
 
 			word_map[temp] = { temp.size() , i };
