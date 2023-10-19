@@ -6,9 +6,11 @@ using namespace std;
 bool custom_cmp(pair<int, pair<int, int>> a, pair<int, pair<int, int>> b) {
 	if (a.second.first == b.second.first)
 		return a.first < b.first;
-	// tie break 시 출발지 기준 내림차순
+	// tie break 시 출발지 기준 오름차순
 	return a.second.first < b.second.first;
 	// 도착지 기준 내림차순 정렬
+	// 왜 도착지 기준으로 오름차순 정렬을 해야할까?
+	// 택배를 빨리 내릴수록 효율적으로 공간을 사용할 수 있기 때문이다.
 }
 
 vector<pair<int, pair<int, int>>> parcel_info;
