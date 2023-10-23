@@ -27,7 +27,7 @@ int main(){
 				// IOI가 아니면 훑을 필요가 없음
 				ref_length++; // IOIOI....
 				if (ref_length == num) { // 입력한 길이와 같아지면
-					ref_length--; // 중복으로 세는 경우를 막는다.
+					ref_length--; // ref_length가 더 커지면 추가로 못셈
 					answer++; // 일치하는 문자열이므로 답 증가
 				}
 				i += 2; // 다음 2칸을 훑는다. (IOI -> IOI를 찾아야 하므로)
