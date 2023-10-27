@@ -30,7 +30,7 @@ int main(){
 				break;
 			}
 			if (expense_list[i] > leftover) {
-				// 인출 금액보다 지출이 적으면 돈이 남는다
+				// 쓰고 남은 돈보다 하루 쓸 돈이 더 많다 
 				leftover = mid;
 				// 사용할 수 있는 금액 초기화
 				withdraw_count++;
