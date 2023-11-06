@@ -11,8 +11,10 @@ int main(){
 	while (true) {
 		temp_of_num = to_string(num);
 
-		if (temp_of_num.find(target[iter]) != string::npos)
-			iter++;
+		for (int i = 0; i < temp_of_num.size(); i++) {
+			if(target[iter] == temp_of_num[i])
+				iter++;
+		}
 
 		if (iter == target.size())
 			break;
