@@ -61,19 +61,18 @@ int main(){
 		if (seq[i - 1] == 1) {
 			answer += (seq[i] + seq[i-1]);
 			pos_neg_classifier["POS"] -= 2;
-			// 1은 i-1번째에 올 수 밖에 없음.
+			// 1은 i-1번째에 올 수 밖에 없음. 왜? 오름차순이라
 			// 양수 입장에서 1은 더하는게 이득
 		}
 		else {
 			answer += (seq[i] * seq[i - 1]);
 			pos_neg_classifier["POS"] -= 2;
-		}
-		// 양수 2개씩 차감 해주어야 함
+		} // 양수 2개씩 차감 해주어야 함
 	}
 
-	// 이제 남은 큐에서 분기를 통해 정리할 차례
+	// 이제 남은 음수를 분기를 통해 정리할 차례
 	if (pos_neg_classifier["NEG"] == 1) {
-		if (pos_neg_classifier["ZERO"] == 1) {
+		if (pos_neg_classifier["ZERO"] != 0) {
 			pos_neg_classifier["NEG"]--;
 			pos_neg_classifier["ZERO"]--;
 			neg_store = 0;
