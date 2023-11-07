@@ -1,5 +1,4 @@
 #include <iostream>
-#include <deque>
 #include <vector>
 #include <unordered_map>
 #include <algorithm>
@@ -9,7 +8,6 @@ using namespace std;
 ll num = 0, digit = 0, answer = 0;
 unordered_map<string, int> pos_neg_classifier;
 vector<ll> seq;
-deque<ll> last_dq;
 void optimize() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(NULL);
@@ -37,11 +35,12 @@ int main(){
 	sort(seq.begin(), seq.end());
 	// 오름차순 정렬
 
+	ll neg_store = 0;
 	for (int i = 0; i < num; i += 2) {
 		if (pos_neg_classifier["NEG"] == 0)
 			break; // 음수가 더 이상 없으면 중지
 		if (pos_neg_classifier["NEG"] == 1) {
-			last_dq.push_front(seq[i]);
+			neg_store = seq[i];
 			break; // 하나 남은 음수는 큐에 넣고 중지
 		}
 
@@ -54,8 +53,9 @@ int main(){
 		if (pos_neg_classifier["POS"] == 0)
 			break; // 양수가 더 이상 없으면 중지
 		if (pos_neg_classifier["POS"] == 1) {
-			last_dq.push_back(seq[i]);
-			break; // 하나 남은 양수는 큐에 넣고 중지
+			answer += seq[i];
+			pos_neg_classifier["POS"]--;
+			break; // 하나 남은 양수는 더해주고 중지
 		}
 
 		if (seq[i - 1] == 1) {
@@ -76,22 +76,13 @@ int main(){
 		if (pos_neg_classifier["ZERO"] == 1) {
 			pos_neg_classifier["NEG"]--;
 			pos_neg_classifier["ZERO"]--;
-			last_dq.pop_front();
-			// 0이 있으면 음수랑 곱하면 최대임
+			neg_store = 0;
+			// 0이 있으면 음수랑 곱하면 최대이고, 답에 변화 X
 		}
 		else {
-			answer += last_dq.front();
-			last_dq.pop_front();
-			// 0이 없으면 그냥 더해야함 어쩔 수 없음
+			answer += neg_store;
 			pos_neg_classifier["NEG"]--;
 		}
-	}
-
-	if (pos_neg_classifier["POS"] == 1) {
-		answer += last_dq.back();
-		last_dq.pop_back();
-		// 양수는 그냥 더해주는게 최대임
-		pos_neg_classifier["POS"]--;
 	}
 
 	cout << answer;
