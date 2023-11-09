@@ -101,3 +101,7 @@ vector<int> solution(int n, vector<vector<int>> paths, vector<int> gates, vector
 	cout << answer[0] << " " << answer[1] << '\n';
 	return answer;
 }
+
+// 이 문제에서 왜 다른 출발지를 경유하는 경우는 생각하지 않는가?
+// 처음에 모든 출발지를 동시에 집어넣으며, dist = 0으로 초기화한다.
+// 그럼 당연히 최소거리로 초기화되기 때문에, continue에 걸림
