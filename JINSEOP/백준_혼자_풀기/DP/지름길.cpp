@@ -2,29 +2,35 @@
 #include <vector>
 using namespace std;
 
-int num = 0, dist = 0, src = 0, dest = 0, weight = 0;
-vector<pair<int, int>> shortcut[10001];
-int min_dist[10001];
+int num = 0, dist = 0, from = 0, to = 0, cost = 0, answer = 0;
+int dp[10001];
+vector<pair<int, int>> info_vec[10001];
 int main() {
 	cin >> num >> dist;
-	
+
 	for (int i = 0; i < num; i++) {
-		cin >> src >> dest >> weight;
-		if (dest > dist || dest - src < weight)
-			continue; // 역주행 불가능, 거리보다 가중치가 긴 경우 제외
-		shortcut[dest].push_back({ src, weight });
+		cin >> from >> to >> cost;	
+		if (to > dist || to - from < cost)
+			continue;
+		// 도착 위치가 고속도로의 거리보다 멀면 갈 수 없다.
+		// 또한 지름길의 거리가 기존 거리보다 길면 갈 필요가 없다.
+
+		info_vec[to].push_back({ cost, from });
+		// 양방향이 아님. 앞으로만 갈 수 있음
+		// 목적지로부터 출발지를 탐색할 수 있도록 한다.
 	}
 
-	min_dist[0] = 0;// 시작 지점
-	for (int i = 1; i <= dist; i++) { // 도착할 때 까지
-		min_dist[i] = min_dist[i - 1] + 1; // 지름길이 없으면 그냥 + 1
+	dp[0] = 0; // 시작지점
+	for (int i = 1; i <= dist; i++) {
+		dp[i] = dp[i - 1] + 1;
+		// 기본적으로 앞으로 가는데, 거리 1을 할당한다.
 
-		for (int j = 0; j < shortcut[i].size(); j++)
-			min_dist[i] = min(min_dist[i], min_dist[shortcut[i][j].first] + shortcut[i][j].second);
-		// 해당 목적지(i)에 지름길이 있다면 해당 지름길을 훑는다.
-		// 이전 도착지 (.first) + 현재 도착지까지 지름길을 탔을 때 거리로.
+		for (int j = 0; j < info_vec[i].size(); j++)
+			dp[i] = min(dp[i], dp[info_vec[i][j].second] + info_vec[i][j].first);
+		// 지름길이 존재하는 위치라면, 지름길을 살펴본다.
+		// (지름길의 출발지 + 지름길 거리) vs 그냥 쭉 왔을 때 도착지까지의 거리
 	}
 
-	cout << min_dist[dist];
+	cout << dp[dist];
 	return 0;
 }
