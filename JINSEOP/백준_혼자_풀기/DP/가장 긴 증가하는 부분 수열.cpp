@@ -3,24 +3,32 @@
 using namespace std;
 
 int num = 0, answer = 0;
-int seq[1000], dp[1000];
-int main(){
-	cin >> num;
-	for (int i = 0; i < num; i++)
-		cin >> seq[i];
+int seq[1000];
+int dp[1000];
+void optimize() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+}
 
-	for (int i = 0; i < num; i++) {
-		dp[i] = seq[i];
+int main() {
+    optimize();
+    
+    cin >> num;
+    for (int i = 0; i < num; i++) {
+        cin >> seq[i];
+    }
 
-		for (int j = 0; j <= i; j++) {
-			if (dp[i] > dp[j])
-				dp[i] = max(dp[j] + seq[i], dp[i]);
-		}
+    for (int i = 0; i < num; i++) {
+        dp[i] = 1;
+        
+        for (int j = i - 1; j >= 0; j--)
+            if (seq[i] > seq[j])
+                dp[i] = max(dp[i], dp[j] + 1);
 
-		answer = max(answer, dp[i]);
-	}
+        answer = max(dp[i], answer);
+    }
 
-	cout << answer;
-
-	return 0;
+    cout << answer;
+    return 0;
 }
