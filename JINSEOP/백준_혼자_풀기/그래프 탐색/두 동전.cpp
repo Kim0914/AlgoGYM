@@ -7,8 +7,7 @@ int row = 0, col = 0;
 int dx[4] = {-1, 0, 1, 0};
 int dy[4] = { 0, 1, 0, -1 };
 char board[20][20];
-bool visit_1[20][20];
-bool visit_2[20][20];
+bool visit[20][20][20][20];
 vector<pair<int, int>> coin_pos;
 queue<vector<int>> bfs_q;
 void optimize() {
@@ -25,9 +24,7 @@ void init_queue() {
     }
     temp_vec.push_back(0);
 
-    visit_1[temp_vec[0]][temp_vec[1]] = true;
-    visit_2[temp_vec[2]][temp_vec[3]] = true;
-
+    visit[temp_vec[0]][temp_vec[1]][temp_vec[2]][temp_vec[3]] = true;
     bfs_q.push(temp_vec);
 }
 
@@ -76,7 +73,7 @@ int bfs() {
             if (!check_range(nx_1, ny_1) && !check_range(nx_2, ny_2))
                 continue;
             // 둘 다 맵 밖으로 나가면 안됨
-            if (visit_1[nx_1][ny_1] && visit_2[nx_2][ny_2])
+            if (visit[nx_1][ny_1][nx_2][ny_2])
                 continue;
             // 두 동전 모두 방문한 곳은 
             if (board[nx_1][ny_1] == '#' && board[nx_2][ny_2] == '#')
@@ -87,7 +84,6 @@ int bfs() {
                  ny_1 = curr_y_1;
             // 벽을 만나면 움직이면 안됨
             }
-
             if (board[nx_2][ny_2] == '#') {
                  nx_2 = curr_x_2;
                  ny_2 = curr_y_2;
@@ -102,8 +98,7 @@ int bfs() {
             temp_vec.push_back(curr_time + 1);
             bfs_q.push(temp_vec);
 
-            visit_1[nx_1][ny_1] = true;
-            visit_2[nx_2][ny_2] = true;
+            visit[nx_1][ny_1][nx_2][ny_2] = true;
         }
     }
 
