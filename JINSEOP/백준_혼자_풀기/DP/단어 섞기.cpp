@@ -10,6 +10,7 @@ int main() {
         cin >> src1 >> src2 >> target;
 
         int src1_ptr = 0, src2_ptr = 0;
+        bool after_service = true;
         for (int target_ptr = 0; target_ptr < target.size(); target_ptr++) {
             if (target[target_ptr] == src1[src1_ptr] && target[target_ptr] == src2[src2_ptr]) {
                 // 동시에 맞는 알파벳이 있으면?
@@ -26,9 +27,12 @@ int main() {
                 src1_ptr++;
             else if (target[target_ptr] == src2[src2_ptr])
                 src2_ptr++;
+
+            if (src1_ptr == src1.size() && src2_ptr == src2.size() && (target_ptr != (target.size() - 1)))
+                after_service = false;
         }
 
-        if(src1_ptr == src1.size() && src2_ptr == src2.size())
+        if(src1_ptr == src1.size() && src2_ptr == src2.size() && after_service)
             cout << "Data set " << (i + 1) << ": yes";
         else
             cout << "Data set " << (i + 1) << ": no";
