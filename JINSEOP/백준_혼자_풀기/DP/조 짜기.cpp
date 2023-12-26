@@ -12,7 +12,6 @@ int main() {
 		int min_score = students[i], max_score = students[i];
 		// i번째 학생을 혼자 둔다고 가정하자.
 		for (int j = i - 1; j >= 0; j--) {
-      		// 0 ~ j, j ~ i로 그룹을 이분한다.
 			max_score = max(students[j + 1], max_score);
 			min_score = min(students[j + 1], min_score);
 			dp[i] = max(dp[i], dp[j] + max_score - min_score);
