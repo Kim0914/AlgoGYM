@@ -25,9 +25,6 @@ void fold_ruler(int color, double& left, double& right) {
 		right = left;
 	left = fold_point;
 	// 종이를 접었을 때, 양 쪽 끝 위치를 변경한다.
-	// 이 부분이 핵심이다.
-	// 접었을 때, 왼쪽이 오른쪽보다 튀어나가면 오른쪽을 해당 자리로 옮긴다.
-	// 왼쪽은 반드시 접힌 위치로.
 }
 
 int main() {
@@ -42,10 +39,6 @@ int main() {
 
 	double res = right - left;
 	// 결과를 출력하는 부분이 약간 어렵다.
-	res *= 10;
-	res = floor(res);
-	res /= 10;
-	// 올바른 소수점 처리를 위해 다음과 같이 처리
 	cout << fixed;
 	cout.precision(1);
 	// 소수점 아래로 1자리까지 출력
