@@ -3,71 +3,52 @@
 using namespace std;
 
 double ruler_length = 0;
-pair<double, double> red_dots;
-pair<double, double> blue_dots;
-pair<double, double> yellow_dots;
-bool fold_state[3];
+pair<double, double> dots_pair[3];
+double fold_dots(double fold_point, double target) {
+	return fold_point + fabs(fold_point - target);
+}
+
+void fold_ruler(int color, double& left, double& right) {
+	if (dots_pair[color].first == dots_pair[color].second)
+		return;
+	// 점 위치가 이미 겹쳤으면 탐색 안해도 됨
+
+	double fold_point = (dots_pair[color].first + dots_pair[color].second) / 2;
+	for (int i = color + 1; i < 3; i++) {
+	// 현재 색부터 노랑색까지 쭉 탐색
+		dots_pair[i].first = fold_dots(fold_point, dots_pair[i].first);
+		dots_pair[i].second = fold_dots(fold_point, dots_pair[i].second);
+	}
+
+	left = fold_dots(fold_point, left);
+	if (left > right)
+		right = left;
+	left = fold_point;
+	// 종이를 접었을 때, 양 쪽 끝 위치를 변경한다.
+	// 이 부분이 핵심이다.
+	// 접었을 때, 왼쪽이 오른쪽보다 튀어나가면 오른쪽을 해당 자리로 옮긴다.
+	// 왼쪽은 반드시 접힌 위치로.
+}
+
 int main() {
 	cin >> ruler_length;
-	cin >> red_dots.first >> red_dots.second;
-	cin >> blue_dots.first >> blue_dots.second;
-	cin >> yellow_dots.first >> yellow_dots.second;
-
-	// 빨간 걸 먼저 접자. 접을 때 점 위치 모두 옮기기
-	double fold_point = (red_dots.first + red_dots.second) / 2;
 	double left = 0, right = ruler_length;
-	fold_state[0] = true;
 
-	blue_dots.first = fold_point + fabs(fold_point - blue_dots.first);
-	blue_dots.second = fold_point + fabs(fold_point - blue_dots.second);
+	for (int i = 0; i < 3; i++)
+		cin >> dots_pair[i].first >> dots_pair[i].second;
 
-	yellow_dots.first = fold_point + fabs(fold_point - yellow_dots.first);
-	yellow_dots.second = fold_point + fabs(fold_point - yellow_dots.second);
+	for (int i = 0; i < 3; i++)
+		fold_ruler(i, left, right); // 빨 파 노 순서대로 접음
 
-	// 접힌 길이는 어떻게 계산?
-	// 둘 중 더 큰 쪽이 접힌 길이가 된다.
-	if (fold_point < (left + right) / 2)
-		left = fold_point;
-	else
-		right = fold_point;
-
-	
-	// 중요한 것은, 접었을 때 점 위치를 반대편으로 옮겨주어야 한다.
-	if (blue_dots.first == blue_dots.second)
-		fold_state[1] = true;
-	// 파란 게 맞았는지 확인
-	if (yellow_dots.first == yellow_dots.second)
-		fold_state[2] = true;
-	// 노란 게 맞았는지 확인
-
-	if (!fold_state[1]) {
-	// 파란 게 아직 안접혔으면
-		fold_point = (blue_dots.first + blue_dots.second) / 2;
-		fold_state[1] = true;
-
-		yellow_dots.first = fold_point + fabs(fold_point - yellow_dots.first);
-		yellow_dots.second = fold_point + fabs(fold_point - yellow_dots.second);
-
-		if (yellow_dots.first == yellow_dots.second)
-			fold_state[2] = true;
-
-		if (fold_point < (left + right) / 2)
-			left = fold_point;
-		else
-			right = fold_point;
-	}
-
-	if (!fold_state[2]) {
-	// 노란 게 아직 안접혔으면
-		fold_point = (yellow_dots.first + yellow_dots.second) / 2;
-		fold_state[2] = true;
-
-		if (fold_point < (left + right) / 2)
-			left = fold_point;
-		else
-			right = fold_point;
-	}
-
-	cout << fabs(left - right);
+	double res = right - left;
+	// 결과를 출력하는 부분이 약간 어렵다.
+	res *= 10;
+	res = floor(res);
+	res /= 10;
+	// 올바른 소수점 처리를 위해 다음과 같이 처리
+	cout << fixed;
+	cout.precision(1);
+	// 소수점 아래로 1자리까지 출력
+	cout << res;
 	return 0;
 }
