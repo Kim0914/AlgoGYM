@@ -38,6 +38,8 @@ int main() {
 			if (next_color > 1)
 				cylinder_q.push({ next_color - 1, next_num });
 		}
+	// 두 개를 뽑지 않으면, 동일한 개수의 시험관이 여러개일 때
+	// 어느 것을 우선적으로 뽑는 지 보장할 수가 없다.
 	}
 
 	if (cylinder_st.size() < num)
