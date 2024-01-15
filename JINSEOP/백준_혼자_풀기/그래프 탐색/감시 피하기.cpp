@@ -3,11 +3,8 @@
 using namespace std;
 
 int row = 0;
-int dx[4] = { -1, 0, 1, 0 };
-int dy[4] = { 0, 1, 0, -1 };
 char hallway[6][6];
 vector<pair<int, int>> teachers;
-bool visit[6][6];
 bool stare_student(int curr_x, int curr_y) {
 	// 선생님 현재 자리에서 4방향으로 쭉 진행
 	for (int i = 1; i < (row - curr_y); i++) {
