@@ -51,6 +51,32 @@ bool check_cycle(int node_x, int node_y) {
 	return false;
 }
 
+int make_spanning_tree(bool reverse) {
+	int uphill = 0;
+
+	init_map();
+
+	if(!reverse)
+		sort(path_info.begin() + 1, path_info.end(), cmp);
+	else
+		sort(path_info.begin() + 1, path_info.end(), r_cmp);
+
+	for (int i = 0; i < path_info.size(); i++) {
+		int curr_from = path_info[i].first.first;
+		int curr_to = path_info[i].first.second;
+		int curr_hill = path_info[i].second;
+
+		if (!check_cycle(curr_from, curr_to)) {
+			do_union(curr_from, curr_to);
+
+			if (curr_hill == 0)
+				uphill += 1;
+		}
+	}
+
+	return uphill;
+}
+
 int main() {
 	optimize();
 	
@@ -61,41 +87,12 @@ int main() {
 		path_info.push_back({ {from, to}, hill });
 	}
 
-	int max_uphill = 0, min_uphill = 0;
-	init_map();
-	sort(path_info.begin() + 1, path_info.end(), cmp);
-	for (int i = 0; i < path_info.size(); i++) {
-		int curr_from = path_info[i].first.first;
-		int curr_to = path_info[i].first.second;
-		int curr_hill = path_info[i].second;
-
-		if (!check_cycle(curr_from, curr_to)) {
-			do_union(curr_from, curr_to);
-
-			if(curr_hill == 0)
-				min_uphill += 1;
-		}
-	}
-	// 내리막길 우선 설치
-
-	init_map();
-	sort(path_info.begin() + 1, path_info.end(), r_cmp);
-	for (int i = 0; i < path_info.size(); i++) {
-		int curr_from = path_info[i].first.first;
-		int curr_to = path_info[i].first.second;
-		int curr_hill = path_info[i].second;
-
-		if (!check_cycle(curr_from, curr_to)) {
-			do_union(curr_from, curr_to);
-
-			if(curr_hill == 0)
-				max_uphill += 1;
-		}
-	}
-	// 오르막길 우선 설치
+	int max_uphill = make_spanning_tree(true);
+	int min_uphill = make_spanning_tree(false);
 
 	max_uphill *= max_uphill;
 	min_uphill *= min_uphill;
+
 	cout << max_uphill - min_uphill;
 	return 0;
 }
