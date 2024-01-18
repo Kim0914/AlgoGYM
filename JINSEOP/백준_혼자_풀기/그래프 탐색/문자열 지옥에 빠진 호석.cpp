@@ -19,11 +19,10 @@ void optimize() {
 
 void dfs(int depth, int curr_x, int curr_y, string curr_str) {
 	// 8방향 dfs를 돌려보자
-	if (depth == max_size) {
-		hash_counter[curr_str]++;
+	if (depth > 5)
 		return;
-	}
 
+	hash_counter[curr_str]++;
 	for (int i = 0; i < 8; i++) {
 		int nx = (curr_x + dx[i]) % row;
 		int ny = (curr_y + dy[i]) % col;
@@ -45,15 +44,6 @@ int main() {
 		for (int j = 0; j < col; j++)
 			cin >> game_board[i][j];
 
-	for (int i = 0; i < num; i++) {
-		cin >> target_str;
-		int size = target_str.size();
-		max_size = max(size, max_size);
-
-		hash_counter[target_str] = 0;
-		gods_saying.push_back(target_str);
-	}
-	
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < col; j++) {
 			string init_str = "";
@@ -63,8 +53,10 @@ int main() {
 		}
 	}
 
-	for (int i = 0; i < gods_saying.size(); i++)
-		cout << hash_counter[gods_saying[i]] << '\n';
+	for (int i = 0; i < num; i++) {
+		cin >> target_str;
+		cout << hash_counter[target_str] << '\n';
+	}
 
 	return 0;
 }
