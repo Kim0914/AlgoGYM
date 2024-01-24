@@ -28,6 +28,7 @@ int main() {
 
 		do_cantore(target);
 		cout << '\n';
-		return 0;
 	}
+
+	return 0;
 }
