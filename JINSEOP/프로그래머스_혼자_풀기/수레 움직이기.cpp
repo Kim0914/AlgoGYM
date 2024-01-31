@@ -7,8 +7,8 @@ using namespace std;
 #define piii pair<pair<int, int>, int>
 #define MAX 9999999
 
-int dx[4] = { -1, 0, 1, 0 };
-int dy[4] = { 0, 1, 0, -1 };
+int dx[4] = { -1, 1, 0, 0 };
+int dy[4] = { 0, 0, -1, 1 };
 bool visit_red[4][4], visit_blue[4][4], red_fin = false, blue_fin = false;
 pii red_start, blue_start, red_end, blue_end;
 int backtrack_wagen(int red_x, int red_y, int blue_x, int blue_y, int stride, vector<vector<int>>& maze) {
@@ -38,12 +38,12 @@ int backtrack_wagen(int red_x, int red_y, int blue_x, int blue_y, int stride, ve
                 continue; // 미로 밖으로 나가버리는 경우 불가능
             if (maze[red_nx][red_ny] == 5 || maze[blue_nx][blue_ny] == 5)
                 continue; // 둘 중 하나라도 장애물 만나는 경우 불가능
-            if (red_nx == blue_nx && red_ny == blue_ny)
-                continue; // 둘 동시에 동일한 칸으로 이동 불가능
             if ((red_nx == blue_x && red_ny == blue_y) && (blue_nx == red_x && blue_ny == red_y))
                 continue; // 둘의 자리가 바뀌는 경우
             if ((!red_fin && visit_red[red_nx][red_ny]) || (!blue_fin && visit_blue[blue_nx][blue_ny]))
                 continue; // 도착 지점은 예외, 방문 이미 한 곳은 이동 불가
+            if (red_nx == blue_nx && red_ny == blue_ny)
+                continue; // 둘 동시에 동일한 칸으로 이동 불가능
 
             visit_red[red_nx][red_ny] = true;
             visit_blue[blue_nx][blue_ny] = true;
@@ -85,9 +85,4 @@ int solution(vector<vector<int>> maze) {
     answer = backtrack_wagen(red_start.first, red_start.second, blue_start.first, blue_start.second, 0, maze);
 
     return (answer == MAX) ? 0 : answer;
-}
-
-int main() {
-    solution({ {4, 3, 0, 0}, {5, 5, 5, 0},{1, 0, 0, 0},{2, 0, 0, 0} });
-	return 0;
 }
