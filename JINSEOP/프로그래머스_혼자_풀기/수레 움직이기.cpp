@@ -5,119 +5,89 @@
 using namespace std;
 #define pii pair<int, int>
 #define piii pair<pair<int, int>, int>
+#define MAX 9999999
 
-int dx[4] = {-1, 0, 1, 0};
-int dy[4] = {0, 1, 0, -1};
-bool visit_red[4][4], visit_blue[4][4];
+int dx[4] = { -1, 0, 1, 0 };
+int dy[4] = { 0, 1, 0, -1 };
+bool visit_red[4][4], visit_blue[4][4], red_fin = false, blue_fin = false;
 pii red_start, blue_start, red_end, blue_end;
-int red_blue_bfs(vector<vector<int>> &maze){
-    queue<piii> red_q;
-    queue<piii> blue_q;
-    
-    red_q.push({red_start, 0});
-    blue_q.push({blue_start, 0});
-    // Queue 2개를 사용해서 검사한다면?
-    visit_red[red_start.first][red_start.second] = true;
-    visit_blue[blue_start.first][blue_start.second] = true;
-    // 빨강 파랑 방문처리
-    
-    bool red_fin = false, blue_fin = false;
-    int red_fin_time = 0, blue_fin_time = 0;
-    int curr_red_x = 0, curr_blue_x = 0;
-    int curr_red_y = 0, curr_blue_y = 0;
-    int red_stride = 0, blue_stride = 0;
-    
-    while(true){
-        if(red_q.empty() && blue_q.empty())
-            break;
-        
-        if(!red_q.empty()){
-            curr_red_x = red_q.front().first.first;
-            curr_red_y = red_q.front().first.second;
-            red_stride = red_q.front().second;
-            red_q.pop();
-        }
-        
-        if(!blue_q.empty()){
-            curr_blue_x = blue_q.front().first.first;
-            curr_blue_y = blue_q.front().first.second;
-            blue_stride = blue_q.front().second;
-            blue_q.pop();
-        }
-        
-        if(curr_red_x == curr_blue_x && curr_red_y == curr_blue_y)
-            continue;
-        cout << curr_red_x << " " << curr_red_y << " " << curr_blue_x << " " << curr_blue_y << '\n';
-        for(int i = 0; i < 4; i++){
-            int red_nx = curr_red_x + dx[i];
-            int red_ny = curr_red_y + dy[i];
-            
-            int blue_nx = curr_blue_x + dx[i];
-            int blue_ny = curr_blue_y + dy[i];
-            
-            if(red_nx == curr_blue_x && red_ny == curr_blue_y)
+int backtrack_wagen(int red_x, int red_y, int blue_x, int blue_y, int stride, vector<vector<int>>& maze) {
+    if (red_fin && blue_fin)
+        return stride;
+    int answer = MAX;
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            int red_nx = red_x + dx[i];
+            int red_ny = red_y + dy[i];
+            int blue_nx = blue_x + dx[j];
+            int blue_ny = blue_y + dy[j];
+
+            if (red_fin) {
+                red_nx = red_end.first;
+                red_ny = red_end.second;
+            }
+            if (blue_fin) {
+                blue_nx = blue_end.first;
+                blue_ny = blue_end.second;
+            }
+
+            if ((red_nx < 0 || red_nx >= maze.size()) || (red_ny < 0 || red_ny >= maze[0].size()))
                 continue;
-            if(blue_nx == curr_red_x && blue_ny == curr_blue_y)
-                continue;
-            
-            if(red_nx == red_end.first && red_ny == red_end.second){
-                red_fin = true;
-                red_fin_time = red_stride + 1;
-                curr_red_x = red_nx;
-                curr_red_y = red_ny;
-                red_stride = red_fin_time;
-            }
-            if(blue_nx == blue_end.first && blue_ny == blue_end.second){
-                blue_fin = true;
-                blue_fin_time = blue_stride + 1;
-                curr_blue_x = blue_nx;
-                curr_blue_y = blue_ny;
-                blue_stride = blue_fin_time;
-            }
-            
-            if(!red_fin){
-                if((red_nx >= 0 && red_nx < maze.size()) && (red_ny >= 0 && red_ny < maze[0].size())){
-                    if(!visit_red[red_nx][red_ny] && maze[red_nx][red_ny] != 5){
-                        red_q.push({{red_nx, red_ny}, red_stride + 1});
-                        visit_red[red_nx][red_ny] = true;
-                    }
-                }
-            }
-            
-            if(!blue_fin){
-                if((blue_nx >= 0 && blue_nx < maze.size()) && (blue_ny >= 0 && blue_ny < maze[0].size())){
-                    if(!visit_blue[blue_nx][blue_ny] && maze[blue_nx][blue_ny] != 5){
-                        blue_q.push({{blue_nx, blue_ny}, blue_stride + 1});
-                        visit_blue[blue_nx][blue_ny] = true;
-                    }
-                }
-            }
+            if ((blue_nx < 0 || blue_nx >= maze.size()) || (blue_ny < 0 || blue_ny >= maze[0].size()))
+                continue; // 미로 밖으로 나가버리는 경우 불가능
+            if (maze[red_nx][red_ny] == 5 || maze[blue_nx][blue_ny] == 5)
+                continue; // 둘 중 하나라도 장애물 만나는 경우 불가능
+            if (red_nx == blue_nx && red_ny == blue_ny)
+                continue; // 둘 동시에 동일한 칸으로 이동 불가능
+            if ((red_nx == blue_x && red_ny == blue_y) && (blue_nx == red_x && blue_ny == red_y))
+                continue; // 둘의 자리가 바뀌는 경우
+            if ((!red_fin && visit_red[red_nx][red_ny]) || (!blue_fin && visit_blue[blue_nx][blue_ny]))
+                continue; // 도착 지점은 예외, 방문 이미 한 곳은 이동 불가
+
+            visit_red[red_nx][red_ny] = true;
+            visit_blue[blue_nx][blue_ny] = true;
+            if (red_nx == red_end.first && red_ny == red_end.second)
+                 red_fin = true;
+            if (blue_nx == blue_end.first && blue_ny == blue_end.second)
+                 blue_fin = true;
+
+            answer = min(answer, backtrack_wagen(red_nx, red_ny, blue_nx, blue_ny, stride + 1, maze));
+
+            red_fin = false;
+            blue_fin = false;
+            visit_red[red_nx][red_ny] = false;
+            visit_blue[blue_nx][blue_ny] = false;
         }
     }
-    
-    if(!red_fin || !blue_fin)
-        return 0;
-    
-    return max(red_fin_time, blue_fin_time);
+
+    return answer;
 }
 
 int solution(vector<vector<int>> maze) {
     int answer = 0;
-    
-    for(int i = 0; i < maze.size(); i++){
-        for(int j = 0; j < maze[0].size(); j++){
-            if(maze[i][j] == 1)
-                red_start = {i, j};
-            if(maze[i][j] == 2)
-                blue_start = {i, j};
-            if(maze[i][j] == 3)
-                red_end = {i, j};
-            if(maze[i][j] == 4)
-                blue_end = {i, j};
+
+    for (int i = 0; i < maze.size(); i++) {
+        for (int j = 0; j < maze[0].size(); j++) {
+            if (maze[i][j] == 1)
+                red_start = { i, j };
+            if (maze[i][j] == 2)
+                blue_start = { i, j };
+            if (maze[i][j] == 3)
+                red_end = { i, j };
+            if (maze[i][j] == 4)
+                blue_end = { i, j };
         }
     }
-    
-    answer = red_blue_bfs(maze);
-    cout << answer;
-    return answer;
+
+    visit_red[red_start.first][red_start.second] = true;
+    visit_blue[blue_start.first][blue_start.second] = true;
+    answer = backtrack_wagen(red_start.first, red_start.second, blue_start.first, blue_start.second, 0, maze);
+
+    return (answer == MAX) ? 0 : answer;
+}
+
+int main() {
+    solution({ {4, 3, 0, 0}, {5, 5, 5, 0},{1, 0, 0, 0},{2, 0, 0, 0} });
+	return 0;
 }
