@@ -35,7 +35,7 @@ int tokenize(string ext) {
 
 void push_data(int token, int val_ext, vector<vector<int>>& data, vector<vector<int>> &picked_vec) {
 	for (int i = 0; i < data.size(); i++)
-		if (data[i][token] < val_ext)
+		if (data[i][token] <= val_ext)
 			picked_vec.push_back(data[i]);
 }
 
@@ -44,13 +44,17 @@ void sort_data(vector<vector<int>> &answer, string sort_by) {
 	switch (token)
 	{
 	case 0:
-		stable_sort(answer.begin(), answer.end(), cmp_code);
+		sort(answer.begin(), answer.end(), cmp_code);
+        break;
 	case 1:
-		stable_sort(answer.begin(), answer.end(), cmp_date);
+		sort(answer.begin(), answer.end(), cmp_date);
+        break;
 	case 2:
-		stable_sort(answer.begin(), answer.end(), cmp_maximum);
+		sort(answer.begin(), answer.end(), cmp_maximum);
+        break;
 	case 3:
-		stable_sort(answer.begin(), answer.end(), cmp_remain);
+		sort(answer.begin(), answer.end(), cmp_remain);
+        break;
 	}
 }
 
@@ -70,9 +74,4 @@ vector<vector<int>> solution(vector<vector<int>> data, string ext, int val_ext, 
 	answer = pick_ext(data, ext, val_ext);
 	sort_data(answer, sort_by);
 	return answer;
-}
-
-int main() {
-	solution({ {1, 20300104, 100, 80}, {2, 20300804, 847, 37}, {3, 20300401, 10, 8} }, "date", 20300501, "remain");
-	return 0;
 }
