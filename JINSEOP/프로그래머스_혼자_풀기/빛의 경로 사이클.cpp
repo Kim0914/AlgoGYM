@@ -29,8 +29,18 @@ int dfs(int curr_x, int curr_y, int dir, int depth, vector<string> &grid) {
     int n_dir = dir;
     if (grid[curr_x][curr_y] != 'S')
         n_dir = refract(dir, grid[curr_x][curr_y]);
-    int nx = (curr_x + dx[n_dir]) % grid.size();
-    int ny = (curr_y + dy[n_dir]) % grid[0].size();
+    
+    int nx = curr_x + dx[n_dir];
+    if(nx < 0)
+        nx = grid.size() - 1;
+    if(nx >= grid.size())
+        nx = 0;
+    
+    int ny = curr_y + dy[n_dir];
+    if(ny < 0)
+        ny = grid[0].size() - 1;
+    if(ny >= grid[0].size())
+        ny = 0;
     
     return dfs(nx, ny, n_dir, depth + 1, grid);
 }
@@ -42,7 +52,7 @@ vector<int> solution(vector<string> grid) {
         for (int j = 0; j < grid[0].size(); j++) {
             for (int dir = 0; dir < 4; dir++) {
                 int cycle = dfs(i, j, dir, 0, grid);
-                if (cycle)
+                if (cycle != 0)
                     answer.push_back(cycle);
             }
         }
