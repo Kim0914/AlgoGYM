@@ -30,6 +30,6 @@ public class Main {
             dp[2][i] = Math.min(dp[0][i-1], dp[1][i-1]) + houseColor[2][i];
         }
 
-        System.out.print(Math.min(Math.min(dp[0][num], dp[1][num]), dp[2][num]));
+        System.out.print(Math.min(Math.min(dp[0][num - 1], dp[1][num - 1]), dp[2][num - 1]));
     }
 }
