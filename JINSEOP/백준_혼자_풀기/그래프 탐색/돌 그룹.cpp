@@ -45,7 +45,10 @@ int bfs(piii start_state, int sum) {
 
             int min_n = min(min(nx, ny), nz);
             int max_n = max(max(nx, ny), nz);
-
+            // 이 부분은 순서가 다르지만 같은 조합을 거르기 위함이다.  
+            // 예를들어, 20 15 25와 15 20 25는 순서가 다르지만 같은 조합이다.
+            // 따라서 동일한 최대, 최소를 방문했음을 표시해서 중복을 방지한다.
+            
             if (!visit[min_n][max_n]) {
                 visit[min_n][max_n] = true;
                 bfs_q.push({ nx, ny });
