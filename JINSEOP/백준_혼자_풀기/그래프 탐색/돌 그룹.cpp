@@ -3,63 +3,52 @@
 #include <queue>
 #include <iostream>
 using namespace std;
+#define pii pair<int, int>
 #define piii pair<int, pair<int, int>>
 
-int dx[6] = { -1, -1, 1, 1, 0, 0 };
-int dy[6] = { 0, 1, 0, -1, 1, -1 };
-int dz[6] = {1, 0, -1, 0, -1, 1 };
-bool visit[3][500];
-bool validate(int target, int curr_x, int curr_y, int curr_z) {
-    if (dx[target] == 0)
-        if (curr_y == curr_z)
-            return false;
-
-    if (dy[target] == 0)
-        if(curr_x == curr_z)
-            return false;
-
-    if (dz[target] == 0)
-        if(curr_x == curr_y)
-            return false;
-
-    return true;
-}
-
-int bfs(piii start_state) {
-    queue<piii> bfs_q;
-    bfs_q.push(start_state);
-    visit[0][start_state.first] = true;
-    visit[1][start_state.second.first] = true;
-    visit[2][start_state.second.second] = true;
+bool visit[1001][1001];
+int bfs(piii start_state, int sum) {
+    queue<pii> bfs_q;
+    bfs_q.push({start_state.first, start_state.second.first});
+    visit[start_state.first][start_state.second.first] = true;
 
     while (!bfs_q.empty()) {
         int curr_x = bfs_q.front().first;
-        int curr_y = bfs_q.front().second.first;
-        int curr_z = bfs_q.front().second.second;
-        visit[0][curr_x] = true;
-        visit[1][curr_y] = true;
-        visit[2][curr_z] = true;
+        int curr_y = bfs_q.front().second;
+        int curr_z = sum - curr_x - curr_y;
+        // 나머지 하나의 수는 그냥 차연산으로 도출
         bfs_q.pop();
 
-        for (int i = 0; i < 6; i++) {
-            if (!validate(i, curr_x, curr_y, curr_z))
+        if (curr_x == curr_y && curr_y == curr_z)
+            return 1;
+
+        int dx[3] = { curr_x, curr_x, curr_y };
+        int dy[3] = { curr_y, curr_z, curr_z };
+        // 두 수를 고르는 경우는 세 가지.
+        for (int i = 0; i < 3; i++) {
+            int nx = dx[i];
+            int ny = dy[i];
+
+            if (nx < ny) {
+                ny -= nx;
+                nx += nx;
+            }
+            else if (nx > ny) {
+                nx -= ny;
+                ny += ny;
+            }
+            else
                 continue;
+            // 선택한 두 수가 같으면 고를 수 없다.
+            int nz = sum - nx - ny;
+            // 두 수가 결정되면 나머지 하나의 수는 자동 결정
 
-            int nx = curr_x + dx[i];
-            int ny = curr_y + dy[i];
-            int nz = curr_z + dz[i];
-            
-            if ((nx == ny) && (ny == nz))
-                return 1;
+            int min_n = min(min(nx, ny), nz);
+            int max_n = max(max(nx, ny), nz);
 
-            if ((nx >= 1 && nx <= 500) && (ny >= 1 && ny <= 500) && (nz >= 1 && nz <= 500)) {
-                if (visit[0][nx] && visit[1][ny] && visit[2][nz])
-                    continue;
-                // 이미 거쳤던 상태(캐시)
-                bfs_q.push({ nx, {ny, nz} });
-                visit[0][nx] = true;
-                visit[1][ny] = true;
-                visit[2][nz] = true;
+            if (!visit[min_n][max_n]) {
+                visit[min_n][max_n] = true;
+                bfs_q.push({ nx, ny });
             }
         }
     }
@@ -73,6 +62,12 @@ int main() {
     cin >> stones.second.first;
     cin >> stones.second.second;
 
-    cout << bfs(stones);
+    int sum = stones.first + stones.second.first + stones.second.second;
+    if ((sum % 3) != 0)
+        cout << 0;
+    // 세 수를 공평하게 분배할 수 없으면 무조건 안된다.
+    else
+        cout << bfs(stones, sum);
+
     return 0;
 }
