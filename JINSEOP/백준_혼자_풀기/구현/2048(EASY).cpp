@@ -1,241 +1,138 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <queue>
 using namespace std;
 
 int row = 0, answer = 0;
-int permutation[5], board[20][20], copied_board[20][20];
+int copied_board[20][20], board[20][20];
 void copy_board() {
 	for (int i = 0; i < row; i++)
 		for (int j = 0; j < row; j++)
 			copied_board[i][j] = board[i][j];
 }
 
+void recopy_board() {
+	for (int i = 0; i < row; i++)
+		for (int j = 0; j < row; j++)
+			board[i][j] = copied_board[i][j];
+}
+
 void move_left() {
-	// 블록을 왼쪽으로 옮기는 과정
+	queue<int> move_q;
+
 	for (int i = 0; i < row; i++) {
-		for (int j = 0; j < row - 1; j++) {
-			bool can_move = false;
-
-			if (copied_board[i][j] = 0) {
-			// 보드의 해당 행에서 0이 아닌 칸을 만날 때 까지 탐색한다.
-				int k = j + 1;
-				while (k < row) {
-					if (copied_board != 0) {
-						can_move = true;
-						break;
-					}
-
-					k++;
-				}
-			// 0이 아닌 칸을 만났으면, 해당 칸을 탐색 시작 위치로 옮긴다.
-			// 예를 들어, 0 0 0 2 와 같은 칸이 있었다면?
-			// k가 3에서 멈추고, 2 0 0 0 으로 만드는 과정이다.
-				if (can_move) {
-					copied_board[i][j] = copied_board[i][k];
-					copied_board[i][k] = 0;
-				}
-			}
+		for (int j = 0; j < row; j++) {
+			if (board[i][j])
+				move_q.push(board[i][j]);
+			// 내가 옮겨야 하는 셀을 큐에 집어 넣는다.
+			board[i][j] = 0;
 		}
-	}
 
-	// 여긴 같은 숫자의 블록이 있으면 합치는 로직
-	// 위의 로직에서 수를 모두 왼쪽으로 옮겼다. 이제 합칠 차례!
-	for (int i = 0; i < row; i++) {
-		for (int j = 0; j < row - 1; j++) {
-			if (copied_board[i][j] == copied_board[i][j + 1]) {
-				copied_board[i][j] = copied_board[i][j] * 2;
-				copied_board[i][j + 1] = 0;
+		int idx = 0; // 왼쪽으로 옮겨야 하니 0부터 시작
+		while (!move_q.empty()) {
+			int cell = move_q.front();
+			move_q.pop();
+
+			if (!board[i][idx]) // 0인 칸으로 셀을 옮김
+				board[i][idx] = cell;
+			else if (board[i][idx] == cell) {
+				board[i][idx] *= 2;
+				idx++;
+			// 만약 같은 값이 이미 있다면, 합쳐주자!
 			}
-		}
-	}
-
-	// 위의 로직에서 미처 다 옮기지 못한 블럭이 있는 경우
-	// 처음 로직과 동일한 방식으로 마저 다 옮김
-	for (int i = 0; i < row; i++) {
-		for (int j = 0; j < row - 1; j++) {
-			bool can_move = false;
-			if (copied_board[i][j] = 0) {
-
-				int k = j + 1;
-				while (k < row) {
-					if (copied_board != 0) {
-						can_move = true;
-						break;
-					}
-
-					k++;
-				}
-
-				if (can_move) {
-					copied_board[i][j] = copied_board[i][k];
-					copied_board[i][k] = 0;
-				}
+			else {
+				idx++;
+				board[i][idx] = cell;
+			// 같은 값도 아니고 0도 아니라면?
+			// 다음 칸으로 인덱스를 옮기고 셀 저장
 			}
 		}
 	}
 }
 
 void move_right() {
+	queue<int> move_q;
+	// 왼쪽과 반대로!
 	for (int i = 0; i < row; i++) {
-		for (int j = row - 1; j >= 1; j--) {
-			bool can_move = false;
-			if (copied_board[i][j] == 0) {
-				int k = j - 1;
-				while (k >= 0) {
-					if (copied_board[i][k] != 0) {
-						can_move = true;
-						break;
-					}
-
-					k--;
-				}
-
-				if (can_move) {
-					copied_board[i][j] = copied_board[i][k];
-					copied_board[i][k] = 0;
-				}
-			}
+		for (int j = row - 1; j >= 0; j--) {
+			if (board[i][j])
+				move_q.push(board[i][j]);
+			board[i][j] = 0;
 		}
-	}
 
-	for (int i = 0; i < row; i++) {
-		for (int j = row - 1; j >= 1; j--) {
-			if (copied_board[i][j] == copied_board[i][j - 1]) {
-				copied_board[i][j] = copied_board[i][j] * 2;
-				copied_board[i][j - 1] = 0;
+		int idx = row - 1;
+		while (!move_q.empty()) {
+			int cell = move_q.front();
+			move_q.pop();
+
+			if (!board[i][idx])
+				board[i][idx] = cell;
+			else if (board[i][idx] == cell) {
+				board[i][idx] *= 2;
+				idx--;
 			}
-		}
-	}
-
-	for (int i = 0; i < row; i++) {
-		for (int j = row - 1; j >= 1; j--) {
-			bool can_move = false;
-			if (copied_board[i][j] == 0) {
-				int k = j - 1;
-				while (k >= 0) {
-					if (copied_board[i][k] != 0) {
-						can_move = true;
-						break;
-					}
-
-					k--;
-				}
-
-				if (can_move) {
-					copied_board[i][j] = copied_board[i][k];
-					copied_board[i][k] = 0;
-				}
+			else {
+				idx--;
+				board[i][idx] = cell;
 			}
 		}
 	}
 }
 
 void move_upward() {
-	for (int i = 0; i < row - 1; i++) {
-		for (int j = 0; j < row; j++) {
-			bool can_move = true;
-			if (copied_board[i][j] == 0) {
-				int k = i + 1;
-				while (k < row) {
-					if (copied_board[k][j] != 0) {
-						can_move = true;
-						break;
-					}
+	queue<int> move_q;
 
-					k++;
-				}
-
-				if (can_move) {
-					copied_board[i][j] = copied_board[k][j];
-					copied_board[k][j] = 0;
-				}
-			}
+	for (int j = 0; j < row; j++) {
+		for (int i = 0; i < row; i++) {
+			if (board[i][j])
+				move_q.push(board[i][j]);
+			board[i][j] = 0;
 		}
-	}
 
-	for (int i = 0; i < row - 1; i++) {
-		for (int j = 0; j < row; j++) {
-			if (copied_board[i][j] == copied_board[i + 1][j]) {
-				copied_board[i][j] = copied_board[i][j] * 2;
-				copied_board[i + 1][j] = 0;
+		int idx = 0;
+		while (!move_q.empty()) {
+			int cell = move_q.front();
+			move_q.pop();
+
+			if (!board[idx][j])
+				board[idx][j] = cell;
+			else if (board[idx][j] == cell) {
+				board[idx][j] *= 2;
+				idx++;
 			}
-		}
-	}
-
-	for (int i = 0; i < row - 1; i++) {
-		for (int j = 0; j < row; j++) {
-			bool can_move = true;
-			if (copied_board[i][j] == 0) {
-				int k = i + 1;
-				while (k < row) {
-					if (copied_board[k][j] != 0) {
-						can_move = true;
-						break;
-					}
-
-					k++;
-				}
-
-				if (can_move) {
-					copied_board[i][j] = copied_board[k][j];
-					copied_board[k][j] = 0;
-				}
+			else {
+				idx++;
+				board[idx][j] = cell;
 			}
 		}
 	}
 }
 
 void move_downward() {
-	for (int i = row - 1; i >= 1; i--) {
-		for (int j = 0; j < row; j++) {
-			bool can_move = false;
-			if (copied_board[i][j] == 0) {
-				int k = i - 1;
-				while (k >= 0) {
-					if (copied_board[k][j] != 0) {
-						can_move = true;
-						break;
-					}
-
-					k--;
-				}
-
-				if (can_move) {
-					copied_board[i][j] = copied_board[k][j];
-					copied_board[k][j] = 0;
-				}
-			}
+	queue<int> move_q;
+	// 윗 방향이랑 반대로!
+	for (int j = 0; j < row; j++) {
+		for (int i = row - 1; i >= 0; i--) {
+			if (board[i][j])
+				move_q.push(board[i][j]);
+			board[i][j] = 0;
 		}
-	}
 
-	for (int i = row - 1; i >= 1; i--) {
-		for (int j = 0; j < row; j++) {
-			if (copied_board[i][j] == copied_board[i - 1][j]) {
-				copied_board[i][j] = copied_board[i][j] * 2;
-				copied_board[i - 1][j] = 0;
+		int idx = row - 1;
+		while (!move_q.empty()) {
+			int cell = move_q.front();
+			move_q.pop();
+
+			if (!board[idx][j])
+				board[idx][j] = cell;
+			else if (board[idx][j] == cell) {
+				board[idx][j] *= 2;
+				idx--;
 			}
-		}
-	}
-
-	for (int i = row - 1; i >= 1; i--) {
-		for (int j = 0; j < row; j++) {
-			bool can_move = false;
-			if (copied_board[i][j] == 0) {
-				int k = i - 1;
-				while (k >= 0) {
-					if (copied_board[k][j] != 0) {
-						can_move = true;
-						break;
-					}
-
-					k--;
-				}
-
-				if (can_move) {
-					copied_board[i][j] = copied_board[k][j];
-					copied_board[k][j] = 0;
-				}
+			else {
+				idx--;
+				board[idx][j] = cell;
 			}
 		}
 	}
@@ -246,15 +143,18 @@ int calculate_max() {
 
 	for (int i = 0; i < row; i++)
 		for (int j = 0; j < row; j++)
-			max_v = max(copied_board[i][j], max_v);
+			max_v = max(board[i][j], max_v);
 
 	return max_v;
 }
 
-void play_2048() {
-	for (int i = 0; i < 5; i++) {
-		int dir = permutation[i];
-		switch (dir)
+void play_2048(int depth) {
+	if (depth == 5)
+		return;
+
+	copy_board();
+	for (int i = 0; i < 4; i++) {
+		switch (i)
 		{
 		case 0:
 			move_left();
@@ -269,21 +169,10 @@ void play_2048() {
 			move_downward();
 			break;
 		}
-	}
 
-	answer = max(answer, calculate_max());
-}
-
-void make_permutation(int depth) {
-	if (depth == 5) {
-		copy_board(); // 맵 복사
-		play_2048(); // 여기서 만든 조합대로 게임 진행
-		return;
-	}
-
-	for (int i = 0; i < 4; i++) {
-		permutation[depth] = i;
-		make_permutation(depth + 1);
+		answer = max(answer, calculate_max());
+		play_2048(depth + 1);
+		recopy_board();
 	}
 }
 
@@ -294,8 +183,7 @@ int main() {
 		for (int j = 0; j < row; j++)
 			cin >> board[i][j];
 
-	make_permutation(0);
+	play_2048(0);
 	cout << answer;
-
 	return 0;
 }
