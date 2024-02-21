@@ -17,105 +17,108 @@ string str_to_lowercase(string word) {
     return ret;
 }
 
-int solution(string word, vector<string> pages) {
-    int answer = 0;
+string find_current_url(string target_source) {
+    // 현재 탐색중인 웹 페이지의 url을 반환한다.
+    string target_tag = "<meta property=\"og:url\" content=\"https://";
+    int tag_idx = target_source.find(target_tag);
+    tag_idx += target_tag.size();
 
-    word = str_to_lowercase(word);
-    for (int i = 0; i < pages.size(); i++) {
-        string token = "";
-        string web_index = "";
+    string url = "";
+    for (int i = tag_idx; i < target_source.size(); i++) {
+        if (target_source[i] == '\"')
+            break;
 
-        for (int j = 0; j < pages[i].size(); j++) {
-            if (pages[i][j] == ' ' || pages[i][j] == '\n' || pages[i][j] == '\t') {
-                for (int k = 0; k < token.size(); k++)
-                    token[k] = tolower(token[k]);
+        url += target_source[i];
+    }
+    
+    website_list.push_back(url);
+    return url;
+}
 
-                if (token[0] == 'c') {
-                    int content_idx = token.find("content");
-                    if (content_idx != string::npos) {
-                        bool start = false;
-                        int start_idx = content_idx + 8;
+int search_word(string target_source, string word) {
+    string target_open_tag = "<body>";
+    string target_close_tag = "</body>";
+    int target_open_idx = target_source.find(target_open_tag);
+    int target_close_idx = target_source.find(target_close_tag);
+    target_open_idx += target_open_tag.size();
+    target_source = target_source.substr(target_open_idx, target_close_idx - target_open_idx);
+    // substring 사용법 : substr(시작 위치, 문자열 길이)
 
-                        for (int k = start_idx; k < token.size(); k++) {
-                            if (!start && token[k] == '"') {
-                                start = true;
-                                continue;
-                            }
-
-                            if (start && token[k] == '"')
-                                break;
-
-                            web_index += token[k];
-                        }
-                    }
-                }
-                // 웹 인덱스 추출
-
-                if (token == word)
-                    website_info[web_index].first++;
-                // 기본점수 계산
-
-                if (token[0] == 'h') {
-                    string external_web_index = "";
-                    int href_idx = token.find("href");
-                    if (href_idx != string::npos) {
-                        bool start = false;
-                        int start_idx = href_idx + 5;
-
-                        for (int k = start_idx; k < token.size(); k++) {
-                            if (!start && token[k] == '"') {
-                                start = true;
-                                continue;
-                            }
-
-                            if (start && token[k] == '"')
-                                break;
-
-                            external_web_index += token[k];
-                        }
-
-                        external_website_info[web_index].push_back(external_web_index);
-                    }
-                }
-
-                token = "";
-                continue;
-            }
-
-            token += pages[i][j];
+    string token = "";
+    int word_count = 0;
+    for (int i = 0; i < target_source.size(); i++) {
+        if (!isalpha(target_source[i])) {
+        // 알파벳이 아닌 문자를 source 내에서 만나면 토큰화 시킨다.
+            if (token == word)
+                word_count++;
+            token = "";
         }
-
-        website_list.push_back(web_index);
+        else
+            token += target_source[i];
     }
 
+    return word_count;
+}
+
+void find_external_url(string target_source, string curr_url) {
+    string target_tag = "<a href=\"https://";
+    int tag_idx = target_source.find(target_tag);
+
+    while (tag_idx != string::npos) {
+    // 외부링크가 여러개일 수 있으니, 반복해서 찾아야 함
+        tag_idx += target_tag.size();
+
+        string external_url = "";
+        while(target_source[tag_idx] != '\"'){
+            external_url += target_source[tag_idx];
+            tag_idx++;
+        }
+
+        external_website_info[curr_url].push_back(external_url);
+        target_source = target_source.substr(tag_idx);
+        // 대상 소스를 잘라야 다음 외부 링크 탐색이 가능하다.
+        tag_idx = target_source.find(target_tag);
+    }
+}
+
+void calculate_link_score() {
     for (int i = 0; i < website_list.size(); i++) {
         string target_web = website_list[i];
-
+        
         for (int j = 0; j < external_website_info[target_web].size(); j++) {
             string next_web = external_website_info[target_web][j];
             website_info[next_web].second += (website_info[target_web].first / external_website_info[target_web].size());
-            // 연결된 웹의 기본 점수 / 외부 링크 수
         }
-        // 링크 점수 계산
     }
+}
 
+int calculate_match_score() {
     double max_match = 0;
+    int max_idx = 0;
+
     for (int i = 0; i < website_list.size(); i++) {
+        double match_score = 0;
         string target_web = website_list[i];
-        double match_score = website_info[target_web].first + website_info[target_web].second;
+        match_score = website_info[target_web].first + website_info[target_web].second;
 
         if (match_score > max_match) {
             max_match = match_score;
-            answer = i;
+            max_idx = i;
         }
     }
-    // 매칭 점수 계산
 
-    return answer;
+    return max_idx;
 }
 
-int main() {
-    solution("Muzi", { "<html lang=\"ko\" xml:lang=\"ko\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta property=\"og:url\" content=\"https://careers.kakao.com/interview/list\"/>\n</head>  \n<body>\n<a href=\"https://programmers.co.kr/learn/courses/4673\"></a>#!MuziMuzi!)jayg07con&&\n\n</body>\n</html>", 
-        "<html lang=\"ko\" xml:lang=\"ko\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta property=\"og:url\" content=\"https://www.kakaocorp.com\"/>\n</head>  \n<body>\ncon%\tmuzI92apeach&2<a href=\"https://hashcode.co.kr/tos\"></a>\n\n\t^\n</body>\n</html>" });
-	return 0;
+int solution(string word, vector<string> pages) {
+    word = str_to_lowercase(word);
+    for (int i = 0; i < pages.size(); i++) {
+        string html_source = str_to_lowercase(pages[i]); // 전체 소문자 변환
+        string curr_web_url = find_current_url(html_source); // 현재 페이지 url
+        website_info[curr_web_url].first = search_word(html_source, word); // 기본 점수 계산
+        find_external_url(html_source, curr_web_url); // 외부 링크 저장
+    }
+
+    calculate_link_score(); // 링크 점수 계산
+    return calculate_match_score();
 }
