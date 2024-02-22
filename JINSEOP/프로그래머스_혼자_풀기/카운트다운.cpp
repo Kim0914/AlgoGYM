@@ -2,43 +2,62 @@
 #include <vector>
 #include <iostream>
 using namespace std;
+#define pii pair<int, int>
 
-int min_dart_count = 987654321, max_single_bool = 0;
-void play_dart(int score, int dart_count, int single_bool) {
-    if (score < 0)
-        return; // 버스트
-    if (dart_count > min_dart_count)
-        return; // 넘어가면 탐색할 필요 없음
+pii dp[100001];
+bool validate(int next_score, int curr_score) {
+    if (next_score < 0)
+        return false; // 버스트
 
-    if (score == 0) {
-        if (min_dart_count >= dart_count) {
-            if (min_dart_count == dart_count) {
-                max_single_bool = max(single_bool, max_single_bool);
-                return; // 같은 경우엔 더 싱글/불이 더 큰 경우로
-            }
+    if (dp[next_score].first && (dp[next_score].first <= dp[curr_score].first))
+        return false;
+    // 다음 점수에 이미 탐색한 기록이 있는데
+    // 횟수가 현재 횟수와 같거나 더 적으면 탐색할 필요 X
 
-            min_dart_count = dart_count;
-            max_single_bool = single_bool;
-            // 다른 경우에는 그럼 싱글/불도 초기화 해야함
-        }
+    if ((dp[next_score].first == dp[curr_score].first + 1) && dp[next_score].second > dp[curr_score].second)
+        return false;
+    // 현재 점수에서 하나 더 던져서 다음 점수를 만들 수 있는 경우
+    // 즉, 던진 횟수가 같은 tie break의 경우에
+    // 볼 + 싱글의 경우가 현재 더 적으면 탐색할 필요 X
 
-        return;
-    }
-
-    play_dart(score - 50, dart_count + 1, single_bool + 1); // 불
-    for (int i = 20; i >= 1; i--) {
-        play_dart(score - i, dart_count + 1, single_bool + 1); // 싱글
-        play_dart(score - (i * 2), dart_count + 1, single_bool); // 더블
-        play_dart(score - (i * 3), dart_count + 1, single_bool); // 트리플
-    }
+    return true;
 }
 
 vector<int> solution(int target) {
     vector<int> answer;
 
-    play_dart(target, 0, 0);
-    answer.push_back(min_dart_count);
-    answer.push_back(max_single_bool);
+    for (int curr_score = target; curr_score > 0; curr_score--) {
+        for (int next_score = 1; next_score <= 20; next_score++) {
+            for (int coef = 1; coef <= 3; coef++) {
+                int next = curr_score - (next_score * coef);
 
+                if (!validate(next, curr_score))
+                    continue;
+
+                dp[next].first = dp[curr_score].first + 1;
+                if (coef == 1) // 싱글을 맞추는 경우
+                    dp[next].second = dp[curr_score].second + 1;
+                else // 아닌 경우 현행 유지
+                    dp[next].second = dp[curr_score].second;
+            }
+        }
+
+        int next = curr_score - 50; // 불
+        
+        if (!validate(next, curr_score))
+            continue;
+
+        dp[next].first = dp[curr_score].first + 1;
+        dp[next].second = dp[curr_score].second + 1;
+        // 불은 무조건 올려주어야 함
+    }
+
+    answer.push_back(dp[0].first);
+    answer.push_back(dp[0].second);
     return answer;
+}
+
+int main() {
+    solution(58);
+	return 0;
 }
