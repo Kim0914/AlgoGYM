@@ -1,61 +1,50 @@
 #include <string>
 #include <vector>
 #include <queue>
-#include <algorithm>
-#include <unordered_map>
 #include <iostream>
 using namespace std;
-#define piii pair<pair<int, int>, int>
+#define pii pair<int, int>
 
-struct cmp {
-	bool operator()(piii a, piii b) {
-		if (a.first.first == b.first.first)
-			return a.second > b.second;
-		
-		return a.first.first > b.first.first;
-	}
-};
-
-unordered_map<int, int> core_index_map;
 int solution(int n, vector<int> cores) {
 	int answer = 0;
-	int size = cores.size(), iter = 0;
 
-	for (int i = 0; i < size; i++)
-		core_index_map[cores[i]] = i + 1;
-	sort(cores.begin(), cores.end());
+	if (n <= cores.size())
+		return n;
 
-	priority_queue<piii, vector<piii>, cmp> core_q;
+	int left_v = 0, right_v = 50000;
+	while (left_v + 1 < right_v) {
+		int mid = (left_v + right_v) / 2;
+		int std = cores.size(); // 기본적으로 진행하는 작업
+
+		for (int i = 0; i < cores.size(); i++)
+			std += mid / cores[i];
+		// 작업 시간 내에 해당 코어가 몇 개의 작업을 처리할 수 있는지?
+
+		if (std < n)
+			left_v = mid;
+		// 작업을 모두 끝낼 수 없다면 작업 시간을 늘려야 한다.
+		else
+			right_v = mid;
+		// 작업을 모두 끝낼 수 있다면 작업 시간을 줄인다.
+	}
+
+	int std = cores.size(); // 기본 작업
+	for (int i = 0; i < cores.size(); i++)
+		std += left_v / cores[i];
+	// 최대 시간 내에 처리할 수 있는 작업의 수
 	for (int i = 0; i < cores.size(); i++) {
-		core_q.push({ { cores[i], cores[i] }, i });
-		iter = i;
+		if ((left_v + 1) % cores[i] == 0)
+			std++;
+	// 최대 시간 + 1의 시점에 작업 처리가 가능한 코어를 찾는다.
+		if (std == n)
+			return i + 1;
+	// 그 중 마지막 코어
 	}
 
-	int timer = 1;
-	bool finished = false;
-	while (true) {
-		while (!core_q.empty() && (core_q.top().first.first == timer)) {
-			iter++;
-			core_q.push({ { timer + core_q.top().first.second, core_q.top().first.second}, iter });
-			n--;
+	return 0;
+}
 
-			cout << core_q.top().first.first << " " << core_q.top().first.second << " " << core_q.top().second << '\n';
-
-			if (n == 0) {
-				finished = true;
-				answer = core_q.top().first.second;
-				break;
-			}
-
-			core_q.pop();
-		}
-
-		if (finished)
-			break;
-
-		timer++;
-	}
-
-	answer = core_index_map[answer];
-	return answer;
+int main() {
+	solution(6, {1,2,3});
+	return 0;
 }
