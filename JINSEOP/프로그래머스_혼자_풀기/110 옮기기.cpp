@@ -1,54 +1,45 @@
 #include <string>
 #include <vector>
+#include <iostream>
 using namespace std;
-
-void convert_to_zero(int pos, string& target) {
-    target[pos] = '1';
-    target[pos + 1] = '1';
-    target[pos + 2] = '0';
-}
-
-void convert_to_one(int dest, int src, string& target) {
-    for (int i = dest; i > src; i--)
-        target[i] = '1';
-}
 
 vector<string> solution(vector<string> s) {
     vector<string> answer;
 
     for (int i = 0; i < s.size(); i++) {
-    // 앞에서부터 111을 찾아, 110으로 치환하자!
-        string partition = "";
-        int src = 0, dest = 0, iter = 0;
-        while(true){
-            bool find_one = false, find_zero = false;
-            for (int j = iter; j < s[i].size(); j++) {
-                partition += s[i][j];
-                if (partition.size() > 3)
-                    partition = partition.substr(1);
+        int zero_cnt = 0;
 
-                if (!find_one && partition == "111") {
-                    src = j;
-                    find_one = true;
-                }
-                if (!find_zero && partition == "110") {
-                    dest = j;
-                    find_zero = true;
-                }
+        while (true) {
+            // 여기서 110을 모두 찾아서 제거함
+            int pos = s[i].find("110");
 
-                if (find_one && find_zero)
+            if (pos == -1)
+                break;
+            else
+                zero_cnt++;
+
+            s[i].erase(pos, 3);
+        }
+
+        while (zero_cnt--) {
+            int zero_pos = -1;
+            string temp_substr_front = "", temp_substr_rear = "";
+
+            for (int j = s[i].size() - 1; j >= 0; j--) {
+                if (s[i][j] == '0') {
+                    zero_pos = j;
                     break;
+                }
             }
 
-            if (!find_one || !find_zero)
-                break;
- 
-            iter = src + 1;
-            if (src > dest)
-                continue; // 111보다 110을 앞에서 찾은 경우
+            if (zero_pos == -1)
+                s[i] = "110" + s[i];
+            else {
+                temp_substr_front = s[i].substr(0, zero_pos + 1);
+                temp_substr_rear = s[i].substr(zero_pos + 1);
 
-            convert_to_zero(src - 2, s[i]);
-            convert_to_one(dest, src, s[i]);
+                s[i] = temp_substr_front + "110" + temp_substr_rear;
+            }
         }
 
         answer.push_back(s[i]);
@@ -58,6 +49,6 @@ vector<string> solution(vector<string> s) {
 }
 
 int main() {
-    solution({ "1110", "100111100", "0111111010" });
+    solution({"1100111011101001" });
 	return 0;
 }
