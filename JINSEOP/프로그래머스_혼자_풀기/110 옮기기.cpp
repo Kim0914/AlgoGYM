@@ -5,44 +5,51 @@ using namespace std;
 
 vector<string> solution(vector<string> s) {
     vector<string> answer;
-
     for (int i = 0; i < s.size(); i++) {
         int zero_cnt = 0;
+        string result_str = "";
 
-        while (true) {
-            // 여기서 110을 모두 찾아서 제거함
-            int pos = s[i].find("110");
+        for (int j = 0; j < s[i].size(); j++) {
+            result_str += s[i][j];
 
-            if (pos == -1)
-                break;
-            else
-                zero_cnt++;
-
-            s[i].erase(pos, 3);
-        }
-
-        while (zero_cnt--) {
-            int zero_pos = -1;
-            string temp_substr_front = "", temp_substr_rear = "";
-
-            for (int j = s[i].size() - 1; j >= 0; j--) {
-                if (s[i][j] == '0') {
-                    zero_pos = j;
-                    break;
+            if (result_str.size() >= 3) {
+                if (result_str.substr(result_str.size() - 3, 3) == "110") {
+                    zero_cnt++;
+                    result_str.erase(result_str.size() - 3, result_str.size());
                 }
             }
+        }
 
-            if (zero_pos == -1)
-                s[i] = "110" + s[i];
-            else {
-                temp_substr_front = s[i].substr(0, zero_pos + 1);
-                temp_substr_rear = s[i].substr(zero_pos + 1);
-
-                s[i] = temp_substr_front + "110" + temp_substr_rear;
+        int zero_pos = -1;
+        for (int j = result_str.size() - 1; j >= 0; j--) {
+            if (result_str[j] == '0') {
+                zero_pos = j;
+                break;
             }
         }
 
-        answer.push_back(s[i]);
+        string temp = "";
+        if (zero_pos == -1) {
+        // 문자열에 0이 없는 경우
+            while (zero_cnt--)
+                temp += "110";
+
+            temp += result_str;
+            answer.push_back(temp);
+        }
+        else {
+            for (int j = 0; j < result_str.size(); j++) {
+                if (j == zero_pos) {
+                    temp += result_str[j];
+                    while (zero_cnt--)
+                        temp += "110";
+                }
+                else
+                    temp += result_str[j];
+            }
+
+            answer.push_back(temp);
+        }
     }
 
     return answer;
