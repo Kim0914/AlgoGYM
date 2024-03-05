@@ -1,6 +1,6 @@
 #include <string>
 #include <vector>
-#include <iostream>
+#include <algorithm>
 #include <queue>
 using namespace std;
 #define ll long long
@@ -32,24 +32,24 @@ pll parse_time(string target) {
 
 int solution(vector<string> lines) {
     int answer = 0;
+    vector<pll> timeline;
+    for (string s : lines)
+        timeline.push_back(parse_time(s));
+    sort(timeline.begin(), timeline.end());
+    // 시작 시간 기준 오름차순 정렬
     
-    priority_queue<ll> process_q;
-    for (string s : lines) {
-        pll parsed_time = parse_time(s);
-        while (!process_q.empty() && ((process_q.top() + 1000) <= parsed_time.first))
+    priority_queue<ll, vector<ll>, greater<>> process_q;
+    for (pll time_pair : timeline) {
+        while (!process_q.empty() && ((process_q.top() + 999) < time_pair.first))
+        // 현재 큐에 있는 가장 빨리 끝나는 작업의 완료 시간에 대해
+        // 1초를 더했는데도 시작 시간이 더 크다면? 큐에서 해당 작업은 빼내도록 하자.
             process_q.pop();
 
-        // pair에 시작 시간, 완료 시간이 들어있음
-        process_q.push(parsed_time.second);
+        process_q.push(time_pair.second);
+        // 이제 남은 작업들은 (완료 시간 + 1초)에도 남아있는 작업들이다.
         int size = process_q.size();
-
         answer = max(answer, size);
     }
 
     return answer;
-}
-
-int main() {
-    solution({ "2016-09-15 01:00:04.002 2.0s", "2016-09-15 01:00:07.000 2s" });
-	return 0;
 }
