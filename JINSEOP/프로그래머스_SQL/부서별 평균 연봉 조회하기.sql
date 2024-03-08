@@ -1,0 +1,7 @@
+SELECT hrd.DEPT_ID, hrd.DEPT_NAME_EN, ROUND(AVG(SAL), 0) AS AVG_SAL
+FROM HR_DEPARTMENT AS hrd INNER JOIN HR_EMPLOYEES AS hre ON hrd.DEPT_ID = hre.DEPT_ID
+GROUP BY hrd.DEPT_ID
+ORDER BY AVG_SAL DESC
+
+# GROUP BY를 사용할 때는 주의해야 한다.
+# 어떤 값을 선택해서 뽑아야 할 지 모르는 SQL문은 오류가 발생한다.
