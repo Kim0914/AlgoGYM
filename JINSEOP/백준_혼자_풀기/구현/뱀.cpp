@@ -126,7 +126,7 @@ void play_game(int second, int curr_x, int curr_y, int curr_dir) {
 	if (apple_map[nx][ny] == 1) {
 		snake.push({ nx, ny });
 		snake_map[nx][ny] = 9;
-		apple_map[curr_x][curr_y] = 0;
+		apple_map[nx][ny] = 0;
 	}
 	else {
 		snake.push({ nx, ny });
@@ -153,7 +153,7 @@ int main() {
 		cin >> sec >> dir;
 		time_line[sec] = dir;
 	}
-	snake_map[0][0] = 1;
+	snake_map[0][0] = 9;
 	snake.push({ 0, 0 });
 	// 뱀의 시작 위치
 
