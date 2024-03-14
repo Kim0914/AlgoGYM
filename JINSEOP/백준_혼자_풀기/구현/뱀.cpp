@@ -86,3 +86,78 @@ int main(){
 		}
 	}
 }
+
+############################# DFS로 풀어본 풀이 추가
+#include <iostream>
+#include <queue>
+using namespace std;
+#define pii pair<int, int>
+
+int row = 0, apple_num = 0, x = 0, y = 0, rot_num = 0, sec = 0, max_time = 0;
+int	apple_map[101][101], snake_map[101][101];
+char time_line[10001], dir = 'X';
+int dx[4] = { -1, 0, 1, 0 };
+int dy[4] = { 0, 1, 0, -1 };
+queue<pii> snake;
+void optimize() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(NULL);
+	cout.tie(NULL);
+}
+
+void play_game(int second, int curr_x, int curr_y, int curr_dir) {
+	int nx = curr_x + dx[curr_dir];
+	int ny = curr_y + dy[curr_dir];
+	int n_dir = curr_dir;
+	if (time_line[second] == 'L')
+		n_dir = (n_dir + 3) % 4;
+	if (time_line[second] == 'D')
+		n_dir = (n_dir + 1) % 4;
+
+	if (snake_map[nx][ny] == 9) {
+		max_time = max(second, max_time);
+		return;
+	}
+	if (nx < 0 || nx >= row || ny < 0 || ny >= row) {
+		max_time = max(second, max_time);
+		return;
+	}
+
+	if (apple_map[nx][ny] == 1) {
+		snake.push({ nx, ny });
+		snake_map[nx][ny] = 9;
+		apple_map[curr_x][curr_y] = 0;
+	}
+	else {
+		snake.push({ nx, ny });
+		snake_map[nx][ny] = 9;
+		snake_map[snake.front().first][snake.front().second] = 0;
+		snake.pop();
+	}
+
+	play_game(second + 1, nx, ny, n_dir);
+}
+
+int main() {
+	optimize();
+
+	cin >> row >> apple_num;
+	for (int i = 0; i < apple_num; i++) {
+		cin >> x >> y;
+		apple_map[x - 1][y - 1] = 1;
+		// 1은 사과를 의미한다.
+	}
+
+	cin >> rot_num;
+	for (int i = 0; i < rot_num; i++) {
+		cin >> sec >> dir;
+		time_line[sec] = dir;
+	}
+	snake_map[0][0] = 1;
+	snake.push({ 0, 0 });
+	// 뱀의 시작 위치
+
+	play_game(1, 0, 0, 1);
+	cout << max_time;
+	return 0;
+}
