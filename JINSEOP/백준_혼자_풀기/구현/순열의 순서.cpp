@@ -34,7 +34,13 @@ int main() {
 					if (factorial[num - i - 1] < target_num)
 						target_num -= factorial[num - i - 1];
 					// 목표한 숫자보다 팩토리얼 값이 작으면?
-					// 목표 숫자에서 깎아서 
+					// 목표 숫자에서 깎아서 해당 자리의 수를 찾는다.
+					// 예를 들어, 10번째 순열이라고 가정해보자.
+					// 가장 처음 자리는 10 - 3! = 1에 의해 2가 된다.
+					// 그 이후로는 반드시 target_num이 factorial 값보다 작다.
+					// 따라서, 2 1 3 4가 된다.
+					// 역으로 생각했을 때, 1로 시작해서 3!을 다 돈 바로 뒤니,
+					// 2 1 3 4 가 맞음을 알 수 있다.
 					else {
 						answer.push_back(j);
 						visit[j] = true;
