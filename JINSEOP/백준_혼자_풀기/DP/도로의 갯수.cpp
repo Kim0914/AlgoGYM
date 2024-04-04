@@ -11,11 +11,19 @@ int main(){
 	for (int i = 0; i < work_num; i++) {
 		cin >> from_x >> from_y >> to_x >> to_y;
 
-		if (from_x - to_x != 0)
-			road[to_x][to_y] += 1;
+		if (from_x - to_x != 0) {
+			if(from_x > to_x)
+				road[from_x][from_y] += 1;
+			else
+				road[to_x][to_y] += 1;
 		// 위에서 내려옴
-		if (from_y - to_y != 0)
-			road[to_x][to_y] += 2;
+		}
+		if (from_y - to_y != 0) {
+			if (from_x > to_x)
+				road[from_x][from_y] += 2;
+			else
+				road[to_x][to_y] += 2;
+		}
 		// 옆에서 옴
 	}
 	
