@@ -1,0 +1,53 @@
+SELECT ID, CASE WHEN RANKING <= TOTAL / 4 THEN 'CRITICAL'
+                WHEN RANKING > TOTAL / 4 AND RANKING <= TOTAL / 4 * 2 THEN 'HIGH'
+                WHEN RANKING > TOTAL / 4 * 2 AND RANKING <= TOTAL / 4 * 3 THEN 'MEDIUM'
+                ELSE 'LOW'
+                END AS COLONY_NAME
+FROM (SELECT ID, RANK() OVER (ORDER BY SIZE_OF_COLONY DESC) AS RANKING, MAX(ID) OVER() AS TOTAL
+      FROM ECOLI_DATA) tab
+ORDER BY ID
+
+################ RANK() OVER()과 MAX() OVER()를 이용한 풀이
+################ MAX() OVER()은 각 행마다 합계를 표시해줌
+
+SELECT ID, CASE WHEN RANKING <= 0.25 THEN 'CRITICAL'
+                WHEN RANKING > 0.25 AND RANKING <= 0.50 THEN 'HIGH'
+                WHEN RANKING > 0.50 AND RANKING <= 0.75 THEN 'MEDIUM'
+                ELSE 'LOW'
+                END AS COLONY_NAME
+FROM (SELECT ID, PERCENT_RANK() OVER (ORDER BY SIZE_OF_COLONY DESC) AS RANKING
+      FROM ECOLI_DATA) tab
+ORDER BY ID
+
+################ PERCENT_RANK() OVER()를 사용한 풀이
+################ RANK()와 동일하지만, 상위 몇 % 인지 직접 반환해준다.
+
+SELECT ID, CASE WHEN NTILE(4) OVER(ORDER BY SIZE_OF_COLONY DESC) = 1 THEN 'CRITICAL'
+                WHEN NTILE(4) OVER(ORDER BY SIZE_OF_COLONY DESC) = 2 THEN 'HIGH'
+                WHEN NTILE(4) OVER(ORDER BY SIZE_OF_COLONY DESC) = 3 THEN 'MEDIUM'
+                ELSE 'LOW'
+                END AS COLONY_NAME
+FROM ECOLI_DATA
+ORDER BY ID
+
+################ NTILE() OVER()를 사용한 풀이
+################ NTILE(N) OVER(PARTITION BY A, ORDER BY B)
+################ A로 GROUP BY해서 B를 기준으로 정렬 후, N개의 그룹으로 묶는다.
+
+WITH RANK_TABLE as(
+    SELECT ID, RANK() OVER (ORDER BY SIZE_OF_COLONY DESC) AS RANKING
+    FROM ECOLI_DATA
+), COUNT_TABLE as(
+    SELECT COUNT(*) AS CNT
+    FROM ECOLI_DATA
+)
+
+SELECT ID, CASE WHEN RANKING <= CNT / 4 THEN 'CRITICAL'
+                WHEN RANKING > CNT / 4 AND RANKING <= ((CNT / 4) * 2) THEN 'HIGH'
+                WHEN RANKING > ((CNT / 4) * 2) AND RANKING <= ((CNT / 4) * 3) THEN 'MEDIUM'
+                ELSE 'LOW'
+                END AS COLONY_NAME
+FROM RANK_TABLE, COUNT_TABLE
+ORDER BY ID
+
+############### 그냥 CTE(Common Table Expression)를 이용한 풀이
