@@ -1,0 +1,24 @@
+WITH RECURSIVE RECURSIVE_ECOLI AS (
+    SELECT ID, PARENT_ID, 1 AS GENERATION
+    FROM ECOLI_DATA
+    WHERE PARENT_ID IS NULL
+    
+    UNION ALL
+    
+    SELECT ed.ID, ed.PARENT_ID, re.GENERATION + 1
+    FROM ECOLI_DATA ed JOIN RECURSIVE_ECOLI re ON ed.PARENT_ID = re.ID
+)
+# 이전에 사용했던 WITH RECURSIVE 구문을 그대로 응용하면 된다.
+  
+SELECT COUNT(GENERATION) AS COUNT, GENERATION
+FROM RECURSIVE_ECOLI
+WHERE ID NOT IN (SELECT PARENT_ID
+                 FROM RECURSIVE_ECOLI
+                 GROUP BY PARENT_ID
+                 HAVING PARENT_ID IS NOT NULL)
+GROUP BY GENERATION
+
+# WITH RECURSIVE를 통해 모든 개체의 세대를 먼저 구한다.
+# 이후 NOT IN 구문을 통해 어떤 개체의 부모가 아닌 개체를 찾는다.
+### 단! NOT IN 구문에는 반드시 IS NOT NULL 구문을 적어주어야 한다.
+### NULL이 연산에 포함되어버리면, 아무 결과도 나오지 않기 때문!
