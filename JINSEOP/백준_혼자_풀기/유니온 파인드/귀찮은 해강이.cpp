@@ -16,29 +16,26 @@ int main() {
 		graph[to].push_back(from);
 	}
 
-	for (int i = 1; i <= num; i++)
+	for (int i = 0; i < num; i++)
 		cin >> lectures[i];
 
-	bool is_connected = false;
-	int answer = 0;
-	for (int i = 2; i <= num; i++) {
+	int answer = num - 1;
+	for (int i = 1; i < num; i++) {
 		int curr_lecture = lectures[i];
 
 		for (int j = 0; j < graph[curr_lecture].size(); j++) {
 			if (graph[curr_lecture][j] == lectures[i - 1]) {
-				is_connected = true;
+				answer--;
 				break;
 			}
 		}
-
-		if (!is_connected)
-			answer++;
 	}
 
 	cout << answer;
 	return 0;
 }
 
+// 위는 시간초과가 아니라, 왜 틀린건지 모르겠네
 ////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
