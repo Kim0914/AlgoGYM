@@ -23,10 +23,14 @@ int main() {
 		cin >> whole_water >> deadline;
 
 		ll answer = MAX;
+		// 바깥 i는 수문을 선택하는 모든 경우의 수를 고르기 위함
 		for (ll i = 0; i < (1 << num); i++) {
 			ll sum = 0;
 			ll partial_water = 0;
 
+		// 안쪽 j는 선택된 수문들에 대한 값을 더해주기 위함
+		// 예를 들어 i가 13이라면 1101이므로, 1, 2, 4번째 수문의 값을 계산해줌
+		// j를 0001 0010 0100 1000 을 돌게하면서, & 연산의 결과가 1인 경우에만 계산해주면 됨
 			for (ll j = 0; j < num; j++) {
 				if (i & (1 << j)) {
 					sum += water_door[j].second;
