@@ -10,25 +10,17 @@ int main() {
 	cin >> st_x >> st_y;
 	cin >> timer;
 
-	// 구현으로 한 번 풀어보자
-	int curr_x = st_x, curr_y = st_y;
-	bool x_state = true, y_state = true;
-	while (timer--) {
-		if (x_state)
-			curr_x++;
-		else
-			curr_x--;
-		if (y_state)
-			curr_y++;
-		else
-			curr_y--;
+	if (((st_x + timer) / row) % 2 == 0)
+		cout << (st_x + timer) % row << ' ';
+	// 나눠서 짝수면 밑에서 올라가는 경우
+	else
+		cout << row - ((st_x + timer) % row) << ' ';
+	// 홀수면 위에서 내려오는 경우니, 끝에서 빼줌
 
-		if (curr_x >= row || curr_x <= 0)
-			x_state = !x_state;
-		if (curr_y >= col || curr_y <= 0)
-			y_state = !y_state;
-	}
-
-	cout << curr_x << " " << curr_y << '\n';
+	if (((st_y + timer) / col) % 2 == 0)
+		cout << (st_y + timer) % col;
+	else
+		cout << col - ((st_y + timer) % col);
+	// 가로 방향도 동일하게 적용
 	return 0;
 }
