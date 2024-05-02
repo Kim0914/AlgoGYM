@@ -20,6 +20,8 @@ void calculate_dp() {
 		for (int j = 0; j < i; j++) {
 			ll each_fatigue = (i - j) * (1 + abs(stones[i] - stones[j]));
 			dp[i] = min(dp[i], max(dp[j], each_fatigue));
+		// 이 부분이 핵심이다. 왜 max(dp[j], each_fatigue)를 계산하는가?
+		// dp[j]와 each_fatigue 중 큰 값이 K보다 작아야 해당 경로로 움직일 수 있다!
 		}
 	}
 }
@@ -55,6 +57,6 @@ int main() {
 	calculate_dp();
 	print_dp();
 
-	//cout << dp[num - 1];
+	cout << dp[num - 1];
 	return 0;
 }
