@@ -7,7 +7,7 @@ string target = "";
 int main() {
 	cin >> target;
 
-	regex re("((100+1+)|(01)+)+");
+	regex re("((100+1+)|(01))+");
 	if (regex_match(target, re))
 		cout << "SUBMARINE";
 	else
