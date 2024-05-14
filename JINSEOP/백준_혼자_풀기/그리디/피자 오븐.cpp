@@ -6,7 +6,7 @@ using namespace std;
 
 int tc = 0;
 int button_arr[5], button_info[4];
-bool visit[80];
+bool visit[71];
 void init_button() {
 	button_info[0] = 10;
 	button_info[1] = -10;
@@ -40,6 +40,7 @@ vector<int> bfs(int target) {
 
 			if (next_time < 0 || next_time > 70)
 				continue;
+			// 10을 더하는 경우, 70까지 갈 수 있다
 			
 			if (!visit[next_time]) {
 				vector<int> next_vec = curr_state;
