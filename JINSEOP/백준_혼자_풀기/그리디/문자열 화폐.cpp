@@ -9,25 +9,20 @@ int main() {
 		cout << '!';
 	}
 	else {
-		int cursor = 6;
 		string answer = "";
-		while (value > 26) {
+		value -= num; // 미리 A로 다 채워놓는 것
+
+		while (value >= 25) {
 			answer += "Z";
-			value -= 26;
-			cursor--;
+			value -= 25;
 		}
 
-		if (value > cursor) {
-			char temp = (value - cursor) + 'A';
-			answer += temp;
-			value -= (value - cursor - 1);
-			cursor--;
-		}
+		if (value) // A보다 큰 알파벳을 넣을 값이 남으면
+			answer += (value + 'A');
 
-		for (int i = cursor; i < num; i++) {
-			answer += "A";
-			value--;
-		}
+		int cursor = answer.length();
+		for (int i = cursor; i < num; i++)
+			answer += 'A';
 
 		reverse(answer.begin(), answer.end());
 		cout << answer;
