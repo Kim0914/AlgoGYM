@@ -22,39 +22,37 @@ int main()
 	// 우리는 이제 length_to_fill 만큼 채워야 함
 	// ex) 50 - 33 = 17 -> 17 / (num - 1) = 2
 	int diff = (length_to_fill / (num - 1));
-	for (int i = 0; i < num - 1; i++) {
-		whole_word += word_vec[i];
-
-		for (int j = 0; j < diff; j++)
-			whole_word += '_';
-	}
-	// 이러면 이제 length_to_fill % (num - 1) 만큼 남음
-	// ex) 17 % 2 = 1 하나를 어디다 붙일지가 관건임
-	
 	int rest_of = (length_to_fill % (num - 1));
-	for (int i = whole_word.size(); i >= 0; i--) {
+
+	for (int i = 1; i < num; i++) {
 		if (rest_of == 0)
 			break;
 
-		if ('A' <= whole_word[i] && whole_word[i] <= 'Z') {
-		// 앞이 대문자인 단어를 찾았으면?
-			int idx = i;
-			for (int j = i; j < whole_word.size(); j++) {
-				if (whole_word[j] == '_')
-					break;
-
-				idx++;
-			}
-
-			string left_sub = whole_word.substr(0, idx);
-			string right_sub = whole_word.substr(idx, whole_word.size() - idx);
-
-			whole_word = left_sub + '_' + right_sub;
+		if ('a' <= word_vec[i][0] && word_vec[i][0] <= 'z') {
+			word_vec[i] = '_' + word_vec[i];
 			rest_of--;
 		}
 	}
 
-	whole_word += word_vec.back();
+	for (int i = num - 1; i >= 0; i--) {
+		if (rest_of == 0)
+			break;
+
+		if ('A' <= word_vec[i][0] && word_vec[i][0] <= 'Z') {
+			word_vec[i] = '_' + word_vec[i];
+			rest_of--;
+		}
+	}
+
+	whole_word += word_vec[0];
+	for (int i = 1; i < num; i++) {
+		for (int j = 0; j < diff; j++) {
+			word_vec[i] = '_' + word_vec[i];
+		}
+
+		whole_word += word_vec[i];
+	}
+
 	cout << whole_word;
 	return 0;
 }
